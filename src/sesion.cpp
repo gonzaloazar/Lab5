@@ -9,8 +9,7 @@ bool Sesion::haySesionActiva(){
         return true;
     else
         return false;
-};
-
+}
 bool Sesion::existeSesion(string as){
     if(this->sesiones.find(as) == this->sesiones.end()){
         return false;
@@ -18,13 +17,11 @@ bool Sesion::existeSesion(string as){
         return true;
     }
 };
-
 void Sesion::setSesionActiva(string a){
     if(existeSesion(a)){
         this->sesionActiva = this->sesiones[a];
     }
 }
-
 User* Sesion::getSesionActiva(){
     return this->sesionActiva;
 }
@@ -37,16 +34,14 @@ bool Sesion::ingresarNumero(string num){
         return false;
     }
 }
-
 void Sesion::registrarUser(string num, string nom, string desc, string url){
     Fecha nuevaFecha;
     User *nuevo = new User(num,nom,desc,url);
     this->sesiones.insert(pair<string, User*>(num,nuevo));
 };
-
 void Sesion::guardarFechaSesion(){
     this->sesionActiva->actUltConex();
 };
 void Sesion::cerrarSesion(){
     this->sesionActiva = NULL;
-};
+}

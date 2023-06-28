@@ -11,7 +11,6 @@ class DtMenVideo : public DtMenMultimedia {
     public:
         void setDuracion(float);
         float getDuracion();
-        DtMenVideo();
         DtMenVideo(int,string,float);
         ~DtMenVideo();
 };

@@ -14,8 +14,7 @@ class MenFoto : public MenMultimedia {
         string getFormato();
         float getTamanio();
         string getTOpc();
-        MenFoto();
-        MenFoto(string codigo, Fecha fecha, string form, float tam, string tOpc);
+        MenFoto(int codigo, string miNum, string url,string form, float tam, string tOpc);
         ~MenFoto();
 };
 

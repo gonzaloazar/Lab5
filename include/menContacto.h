@@ -11,8 +11,7 @@ class MenContacto : public Mensaje {
         void setNum(string);
         string getNum();
         string getNom();
-        MenContacto();
-        MenContacto(string codigo, Fecha fecha, string nom, string num);
+        MenContacto(int codigo, string miNum, string nom, string num);
         ~MenContacto();
 };
 

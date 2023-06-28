@@ -11,7 +11,6 @@ class DtMenMultimedia : public DtMensaje {
     public:
         void setURL(string);
         string getURL();
-        DtMenMultimedia();
         DtMenMultimedia(int,string);
         ~DtMenMultimedia();
 };

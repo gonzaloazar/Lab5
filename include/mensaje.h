@@ -8,18 +8,21 @@ using namespace std;
 
 class Mensaje {
     private:
-        string codigo;
+        int codigo;
         Fecha fecha;
+        string tipoMensaje;
         map <string, bool> visto;
     public:
-        void setCod(string);
-        void setFecha(Fecha);
+        void setCod(int);
+        void setFecha();
         void setVisto(string);
         bool fueVisto(string);
-        string getCod();
+        void setTipoMensaje(string);
+        int getCod();
         string getFecha();
+        string getTipoMensaje();
         Mensaje();
-        Mensaje(string, Fecha);
+        Mensaje(int cod,string miNum);
         ~Mensaje();
 };
 

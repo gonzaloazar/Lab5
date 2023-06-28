@@ -15,7 +15,6 @@ class DtMenFoto : public DtMenMultimedia {
         string getFormato();
         float getTamanio();
         string getTextOpc();
-        DtMenFoto();
         DtMenFoto(int,string,string,float,string);
         ~DtMenFoto();
 };

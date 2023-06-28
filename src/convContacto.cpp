@@ -1,27 +1,25 @@
 #include "../include/convContacto.h"
 
-Convcontacto::Convcontacto(int _numero,string _nombre,int id,
-        bool estaarchivado):Conversacion(id, estaarchivado){
+
+int ConvContacto::getNumero(){
+    return this->numero;
+};
+
+string ConvContacto::getNombre(){
+    return this->nombre;
+};
+
+void ConvContacto::setNumero(int _numero){
+    this->numero=_numero;
+};
+
+void ConvContacto::setNombre(string _nombre){
+    this->nombre=_nombre;
+};
+ConvContacto::ConvContacto(int id,bool estaarchivado,int _numero,string _nombre):Conversacion(id, estaarchivado){
     setNombre(_nombre);
     setNumero(_numero);
-}
+    this->setTipoConv("contacto");
+};
 
-int Convcontacto::getNumero(){
-    return this->numero;
-}
-
-string Convcontacto::getNombre(){
-    return this->nombre;
-}
-
-void Convcontacto::setNumero(int _numero){
-    numero=_numero;
-}
-
-void Convcontacto::setNombre(string _nombre){
-    nombre=_nombre;
-}
-
-Convcontacto::~Convcontacto(){
-}
 

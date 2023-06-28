@@ -11,7 +11,6 @@ class DtMenText : public DtMensaje {
     public: 
         void setText(string);
         string getText();
-        DtMenText();
         DtMenText(int,string);
         ~DtMenText();
 };

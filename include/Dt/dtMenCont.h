@@ -13,7 +13,6 @@ class DtMenCont : public DtMensaje {
         void setNom(string);
         string getNum();
         string getNom();
-        DtMenCont();
         DtMenCont(int,string,string);
         ~DtMenCont();
 };

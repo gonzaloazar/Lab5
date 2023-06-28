@@ -3,17 +3,17 @@
 #include <iostream>
 using namespace std;
 #include "conversacion.h"
-class Convcontacto: public Conversacion {
+
+class ConvContacto: public Conversacion {
     private:
         int numero;
         string nombre;
     public:
-    Convcontacto(int, bool, int numero, string nombre);
-    Convcontacto(Convcontacto *);
+    ConvContacto(int, bool, int numero, string nombre);
     int getNumero();
     string getNombre();
     void setNumero(int);
     void setNombre(string);
-    ~Convcontacto();
+    ~ConvContacto();
 };
 #endif

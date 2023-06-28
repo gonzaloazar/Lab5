@@ -2,15 +2,25 @@
 #include "conversacion.h"
 
 
-Convgrupo::Convgrupo(int id,
-        bool estaarchivado,string _nombre):Conversacion(id, estaarchivado){
-    setNombre(_nombre);
-}
-
-void Convgrupo::setNombre(string _nombre){
-    Nombre=_nombre;
-}
-
-string Convgrupo::getNombre(){
-    return this->Nombre;
-}
+void ConvGrupo::setNombre(string _nombre){
+    this->nombre=_nombre;
+};
+void ConvGrupo::setURL(string _url){
+    this->url = _url;
+};
+string ConvGrupo::getNombre(){
+    return this->nombre;
+};
+string ConvGrupo::getURL(){
+    return this->url;
+};
+Fecha ConvGrupo::getFecha(){
+    return this->creacion;
+};
+ConvGrupo::ConvGrupo(int id,bool estaarchivado,string _nombre,string newURL,map<string, bool> *partAdm):Conversacion(id, estaarchivado){
+    this->nombre = _nombre;
+    this->url = newURL;
+    this->participantesAdmin = partAdm;
+    this->creacion.actualizarFecha();
+    this->setTipoConv("grupo");
+};

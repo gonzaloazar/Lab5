@@ -1,5 +1,5 @@
-#ifndef user_related_stuf_h
-#define user_related_stuf_h
+#ifndef moduser_h
+#define moduser_h
 #include <string>
 using namespace std;
 

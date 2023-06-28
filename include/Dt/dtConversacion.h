@@ -8,9 +8,12 @@ class DtConversacion {
     private:
         int id;
         bool estaArch;
+        string tipoConv;
     public:
+        void setTipoConv(string);
         void setId(int);
         void setEstaArch(bool);
+        string getTipoConv();
         int getId();
         bool getEstaArch();
         DtConversacion();

@@ -1,29 +1,44 @@
 #include "mensaje.h"
 
-void Mensaje::setCod(string _cod){
-    codigo=_cod;
-}
+void Mensaje::setCod(int _cod){
+    this->codigo = _cod;
+};
 
-void Mensaje::setFecha(Fecha){
+void Mensaje::setFecha(){
+    this->fecha.actualizarFecha();
+};
+void Mensaje::setVisto(string a){
+    this->visto[a] = true;
+};
 
-}
+void Mensaje::setTipoMensaje(string tipo){
+    this->tipoMensaje = tipo;
+};
 
-void Mensaje::fueVisto(string){
-}
+string Mensaje::getTipoMensaje(){
+    return this->tipoMensaje;
+};
 
-string Mensaje::getCod(){
+bool Mensaje::fueVisto(string a){
+    if(this->visto[a] == true)
+        return true;
+    else 
+        return false;
+};
+
+
+int Mensaje::getCod(){
     return this->codigo;
-}
+};
 
 string Mensaje::getFecha(){
-    return this->fecha;
-}
+    return this->fecha.getFechaString();
+};
 
-Mensaje::Mensaje(string _cod,Fecha _fecha){
-    codigo=_cod;
-    setFecha(_fecha);
-}
+Mensaje::Mensaje(int _cod, string miNom){
+    this->codigo =_cod;
+    this->setFecha();
+    this->setVisto(miNom);
+};
 
-Mensaje::~Mensaje(){
 
-}
