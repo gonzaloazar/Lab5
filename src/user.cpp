@@ -1,53 +1,70 @@
-#include "../include/user.h"
+#include <string>
+#include "user.h"
+using namespace std;
 
 
-void User::setNum(string _num){
-    this->num = _num;
-}
-void User::setNom(string nom){
-    this->nom=nom;
-}
-void User::setDesc(string desc){
-    this->desc= desc;
-}
-void User::setURL(string url){
-    this->url = url;
-}
-void User::setUltConex(Fecha f){
-    this->ultConex = f;
-}
-void User::setFechaReg(Fecha f){
-    this->fechaReg= f;
-}
-string User::getNum(){
-    return this->num;
-}
+void User::setNom(string n){
+    this->nom = n;
+};
+void User::setNum(string n){
+    this->num = n;
+};
+void User::setURL(string n){
+    this->url = n;
+};
+void User::setDesc(string n){
+    this->desc = n;
+};
+
+void User::actFechaReg(){
+    this->fechaReg->actualizarFecha();
+};
+void User::actUltConex(){
+    this->ultConex->actualizarFecha();
+};
 
 string User::getNom(){
     return this->nom;
-}
-string User::getDesc(){
-    return this->desc;
-}
+};
+string User::getNum(){
+    return this->num;
+};
 string User::getURL(){
     return this->url;
-}
-// string User::getFechaConex(){
-//     cout<<getDia()+":"+getMes()<<":"<<getAnio()<<"/"<<getHora()<<":"<<getMinuto()<<":"<<getSegundo()<<endl; 
-// }
-// string User::getFechaReg(){
-//     cout<<getDia()<<":"<<getMes()<<":"<<getAnio()<<"/"<<getHora()<<":"<<getMinuto()<<":"<<getSegundo()<<endl; 
-// }
-
-User::User(string num, string nom, string desc, string url, Fecha ult, Fecha reg){
-    setNum(num);
-    setNom(nom);
-    setDesc(desc);
-    setURL(url);
-    setUltConex(ult);
-    setFechaReg(reg);
-}
+};
+string User::getDesc(){
+    return this->desc;
+};
+/* Depende de lo que pidan los contratos
+Fecha User::getFechaConex(){
+    return this->ultConex;
+};
+Fecha User::getFechaReg(){
+    return this->fechaReg;
+};
+*/
+User::User(string a, string s, string d, string f){
+    this->num = a;
+    this->nom = s;
+    this->desc = d;
+    this->url = f;
+    this->ultConex = new Fecha();
+    this->fechaReg = new Fecha();
+};
 
 User::~User(){
-    
-}
+    delete this->fechaReg;
+    delete this->ultConex;
+};
+
+void User::actualizarDescripcion(string newDesc){
+    this->setDesc(newDesc);
+};
+
+void User::actualizarNombre(string newNombre){
+    this->setNom(newNombre);
+};
+
+void User::actualizarURL(string newURL){
+    this->setURL(newURL);
+};
