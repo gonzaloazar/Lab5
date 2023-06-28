@@ -43,3 +43,10 @@ void Sesion::registrarUser(string num, string nom, string desc, string url){
     User *nuevo = new User(num,nom,desc,url);
     this->sesiones.insert(pair<string, User*>(num,nuevo));
 };
+
+void Sesion::guardarFechaSesion(){
+    this->sesionActiva->actUltConex();
+};
+void Sesion::cerrarSesion(){
+    this->sesionActiva = NULL;
+};
