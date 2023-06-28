@@ -1,4 +1,5 @@
 #include "../include/contacto.h"
+//pedro
 
 Contacto::Contacto(string _nombre,string _numero){
     Nombre=_nombre;
