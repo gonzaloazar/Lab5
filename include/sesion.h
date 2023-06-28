@@ -16,6 +16,7 @@ class Sesion : public ISesion {
         map<string, User*> sesiones; // https://www.youtube.com/watch?v=7mwgA9XFIEQ creo usare lista
         User *sesionActiva = NULL;
     public: 
+        bool haySesionActiva();
         bool existeSesion(string);
         void setSesionActiva(string);
         User* getSesionActiva();
