@@ -4,6 +4,12 @@
 
 Sesion::Sesion():ISesion(){};
 
+bool Sesion::haySesionActiva(){
+    if(this->sesionActiva != NULL)
+        return true;
+    else
+        return false;
+};
 
 bool Sesion::existeSesion(string as){
     if(this->sesiones.find(as) == this->sesiones.end()){
