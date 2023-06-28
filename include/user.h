@@ -2,9 +2,11 @@
 #define user_h 
 #include <string>
 #include "fecha.h"
+#include "moduser.h"
+
 using namespace std;
 
-class User {
+class User : public ModUser {
     private:
         string num;
         string nom;
@@ -28,6 +30,9 @@ class User {
         User();
         User(string num, string nom, string desc, string url, Fecha ult, Fecha reg);
         ~User();
+        virtual void actualizarURL(string newURL);
+        virtual void actualizarNombre(string newNombre);
+        virtual void actualizarDescripcion(string newDesc);
 };
 
 #endif
