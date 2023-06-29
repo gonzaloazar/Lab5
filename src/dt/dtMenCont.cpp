@@ -18,7 +18,7 @@ string DtMenCont::getNum(){
     return this->num;
 };
 
-DtMenCont::DtMenCont(int a, string s, string d):DtMensaje(int a){
+DtMenCont::DtMenCont(int a, string s, string d):DtMensaje(a){
     this->num = s;
     this->nom = d;
 };
