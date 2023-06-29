@@ -1,8 +1,8 @@
-#include "dtConvCont.h"
+#include "dtConvGrupo.h"
 #include <string>
 using namespace std;
 
-string  DtConvCont::getNom(){
+string DtConvGrupo::getNom(){
     return this->nom;
 };
 
@@ -11,6 +11,6 @@ void DtConvCont::setNom(string a){
 };
 
 
-DtConvCont::DtConvCont(int a, bool s, string d):DtConversacion(int a, bool s){
+DtConvCont::DtConvCont(int a, bool s, string d):DtConversacion(a,s){
     this->nom = d;
 };

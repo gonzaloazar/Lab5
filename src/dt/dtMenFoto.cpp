@@ -27,7 +27,7 @@ string DtMenFoto::getTextOpc(){
     return this->textOpc;
 };
 
-DtMenFoto::DtMenFoto(int a, string d, string s, float f, string g):DtMenMultimedia(int a, string d){
+DtMenFoto::DtMenFoto(int a, string d, string s, float f, string g):DtMenMultimedia(a,d){
     this->formato = s;
     this->tamanio = f;
     this->textOpc = g;
