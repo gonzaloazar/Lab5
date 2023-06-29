@@ -13,7 +13,11 @@ class DtConvGrupo : public DtConversacion {
         Fecha creacion;
     public:
         void setNom(string);
+        void setUrl(string);
+        void setFecha(Fecha);
         string getNom();
+        string getUrl();
+        Fecha getFecha();
         DtConvGrupo();
         DtConvGrupo(int,bool,string,string,Fecha);
         ~DtConvGrupo();
