@@ -6,11 +6,11 @@ string DtConvGrupo::getNom(){
     return this->nom;
 };
 
-void DtConvCont::setNom(string a){
+void DtConvGrupo::setNom(string a){
     this->nom = a;
 };
 
-
-DtConvCont::DtConvCont(int a, bool s, string d):DtConversacion(a,s){
+DtConvGrupo::DtConvGrupo(int a, bool s, string d,string _num,fecha _f):DtConversacion(a,s){
     this->nom = d;
+
 };
