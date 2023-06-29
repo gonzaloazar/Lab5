@@ -10,6 +10,6 @@ string DtMenMultimedia::getURL(){
     return this->url;
 };
 
-DtMenMultimedia::DtMenMultimedia(int x, string s):DtMensaje(int x){
+DtMenMultimedia::DtMenMultimedia(int x, string s):DtMensaje(x){
     this->url = s;
 };

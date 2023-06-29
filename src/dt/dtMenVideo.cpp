@@ -10,6 +10,6 @@ float DtMenVideo::getDuracion(){
     return this->duracion;
 }
 
-DtMenVideo::DtMenVideo(int a,string s,float d):DtMenMultimedia(int a,string s){
+DtMenVideo::DtMenVideo(int a,string s,float d):DtMenMultimedia(a,s){
     this->duracion = d;
 };
