@@ -15,6 +15,6 @@ class DtMenText : public DtMensaje {
         ~DtMenText();
 };
 
-
+std::ostream& operator<<(std::ostream& os, DtMenText& obj);
 
 #endif

@@ -61,4 +61,29 @@ DtMensaje *Conversacion::getDtMensaje(int idMensaje){
         men = NULL;
         miMen = NULL;
     }
-}
+};
+
+map<int, DtMensaje*> Conversacion::getDtMensajes(){
+    map<int, DtMensaje*> misMensajes;
+    for (auto itr = this->mensajes.begin(); itr != this->mensajes.end(); itr++){
+        Mensaje *miMen = itr->second;
+        if (miMen->getTipoMensaje() == "foto"){
+            MenFoto *men = dynamic_cast<MenFoto*>(miMen);
+            DtMenFoto *nuevo = new DtMenFoto(men->getCod(),men->getURL(),men->getFormato(),men->getTamanio(),men->getTOpc());
+            misMensajes[men->getCod()] = nuevo;
+        }else if (miMen->getTipoMensaje() == "video"){
+            MenVideo *men = dynamic_cast<MenVideo*>(miMen);
+            DtMenVideo *nuevo = new DtMenVideo(men->getCod(),men->getURL(),men->getDuracion());
+            misMensajes[men->getCod()] = nuevo;
+        }else if (miMen->getTipoMensaje() == "texto"){
+            MenTexto *men = dynamic_cast<MenTexto*>(miMen);
+            DtMenText *nuevo = new DtMenText(men->getCod(),men->getTexo());
+            misMensajes[men->getCod()] = nuevo;
+        }else if (miMen->getTipoMensaje() == "contacto"){
+            MenContacto *men = dynamic_cast<MenContacto*>(miMen);
+            DtMenCont *nuevo = new DtMenCont(men->getCod(),men->getNom(),men->getNum());
+            misMensajes[men->getCod()] = nuevo;
+        }
+    }
+    return misMensajes;
+};

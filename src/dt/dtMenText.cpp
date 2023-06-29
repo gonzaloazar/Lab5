@@ -10,6 +10,6 @@ string DtMenText::getText(){
     return this->text;
 };
 
-DtMenText::DtMenText(int a, string d):DtMensaje(int a){
+DtMenText::DtMenText(int a, string d):DtMensaje(a){
     this->text = d;
 };

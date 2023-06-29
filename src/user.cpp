@@ -69,20 +69,40 @@ map<int, DtConversacion*> User::getConversacionesAct(){
     map<int, DtConversacion*> convAct;
     for (auto itr = this->conversaciones.begin(); itr != this->conversaciones.end(); itr++){
         if(!itr->second->estaArchivado()){
-            if(itr->second->getTipoConv == "contacto"){
-                Conversacion *miMen = itr->second;
-                ConvContacto *men = dynamic_cast<ConvContacto*>(miMen);
-                DtConvCont *nuevo = new DtConvCont(men->getId(), men->estaArchivado(),men->getNombre(), men->getNumero());
-                convAct[men->getId()] = nuevo;
+            if(itr->second->getTipoConv() == "contacto"){
+                Conversacion *miConv = itr->second;
+                ConvContacto *conv = dynamic_cast<ConvContacto*>(miConv);
+                DtConvCont *nuevo = new DtConvCont(conv->getId(), conv->estaArchivado(),conv->getNombre(), conv->getNumero());
+                convAct[conv->getId()] = nuevo;
             }else {
-                Conversacion *miMen = itr->second;
-                ConvGrupo *men = dynamic_cast<ConvGrupo*>(miMen);
-                DtConvGrupo *nuevo = new DtConvGrupo(men->getId(), men->estaArchivado(),men->getNombre(),men->getURL(),men->getFecha());
-                convAct[men->getId()] = nuevo;
+                Conversacion *miConv = itr->second;
+                ConvGrupo *conv = dynamic_cast<ConvGrupo*>(miConv);
+                DtConvGrupo *nuevo = new DtConvGrupo(conv->getId(), conv->estaArchivado(),conv->getNombre(),conv->getURL(),conv->getFecha());
+                convAct[conv->getId()] = nuevo;
             }
         }
     }
     return convAct;
+};
+
+map<int, DtConversacion*> User::getConvsacionesArch(){
+    map<int, DtConversacion*> convArch;
+    for (auto itr = this->conversaciones.begin(); itr != this->conversaciones.end(); itr++){
+        if(itr->second->estaArchivado()){
+            if(itr->second->getTipoConv() == "contacto"){
+                Conversacion *miConv = itr->second;
+                ConvContacto *conv = dynamic_cast<ConvContacto*>(miConv);
+                DtConvCont *nuevo = new DtConvCont(conv->getId(), conv->estaArchivado(),conv->getNombre(), conv->getNumero());
+                convArch[conv->getId()] = nuevo;
+            }else {
+                Conversacion *miMen = itr->second;
+                ConvGrupo *men = dynamic_cast<ConvGrupo*>(miMen);
+                DtConvGrupo *nuevo = new DtConvGrupo(men->getId(), men->estaArchivado(),men->getNombre(),men->getURL(),men->getFecha());
+                convArch[men->getId()] = nuevo;
+            }
+        }
+    }
+    return convArch;
 };
 
 bool User::existeConvActiva(){

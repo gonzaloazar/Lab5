@@ -19,5 +19,6 @@ class DtConvGrupo : public DtConversacion {
         ~DtConvGrupo();
 };
 
+std::ostream& operator<<(std::ostream& os, DtConvGrupo& obj);
 
 #endif

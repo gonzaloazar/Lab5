@@ -15,5 +15,5 @@ class DtMenVideo : public DtMenMultimedia {
         ~DtMenVideo();
 };
 
-
+std::ostream& operator<<(std::ostream& os, DtMenVideo& obj);
 #endif

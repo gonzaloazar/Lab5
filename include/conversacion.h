@@ -22,12 +22,13 @@ class Conversacion {
     public:
     Conversacion(int unId, bool estArchivado);
     int getId();
-    string getTipoConv;
+    string getTipoConv();
     bool estaArchivado();
     void setID(int);
     void setArchivado(bool);
     void setTipoConv(string);
     ~Conversacion();
     DtMensaje *getDtMensaje(int idMensaje);
+    map<int, DtMensaje*> getDtMensajes();
 };
 #endif

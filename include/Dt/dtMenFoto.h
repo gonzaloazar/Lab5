@@ -18,6 +18,7 @@ class DtMenFoto : public DtMenMultimedia {
         DtMenFoto(int,string,string,float,string);
         ~DtMenFoto();
 };
+std::ostream& operator<<(std::ostream& os, DtMenFoto& obj);
 
 
 #endif

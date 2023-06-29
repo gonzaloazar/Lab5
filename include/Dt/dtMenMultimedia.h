@@ -14,6 +14,7 @@ class DtMenMultimedia : public DtMensaje {
         DtMenMultimedia(int,string);
         ~DtMenMultimedia();
 };
+std::ostream& operator<<(std::ostream& os, DtMenMultimedia& obj);
 
 
 #endif

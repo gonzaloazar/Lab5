@@ -1,9 +1,10 @@
 #include "contmen.h"
 using namespace std;
 
+ContMensaje::ContMensaje():IContMensajes(){};
 
-ContMensaje::ContMensaje(User *m):IContMensajes(){
-    this->sesion = m;
+void ContMensaje::setUser(User *a){
+    this->sesion = a;
 };
 
 void ContMensaje::setConv(int convID){
@@ -41,4 +42,14 @@ int ContMensaje::cantConvArchivadas(){
 
 map<int, DtConversacion*> ContMensaje::listarConversacionesArch(){
     return this->sesion->getConvsacionesArch();
+};
+
+map<int, DtMensaje*> ContMensaje::listarMensajes(int idConversacion){
+    this->setConv(idConversacion);
+    this->miConv->getDtMensajes();
+};
+
+void ContMensaje::selectConv(int idConv){
+    this->setConv(idConv);
+    this->miConv->setArchivado(false);
 };

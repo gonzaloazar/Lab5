@@ -18,6 +18,7 @@ class DtConvCont : public DtConversacion {
         ~DtConvCont();
 };
 
+std::ostream& operator<<(std::ostream& os, DtConvCont& obj);
 
 
 

@@ -16,6 +16,7 @@ class DtMenCont : public DtMensaje {
         DtMenCont(int,string,string);
         ~DtMenCont();
 };
+std::ostream& operator<<(std::ostream& os, DtConvCont& obj);
 
 
 #endif

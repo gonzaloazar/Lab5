@@ -1,7 +1,7 @@
 # Nota: no usar espacios, solo tabuladores en las ordenes.
 
-MAIN = principal
-MODULES	= clase dtclase dtentrenamiento dtsocio dtspinning entrenamiento fecha inscripcion socio spinning 
+MAIN = main
+MODULES	=  
 
 # defino reglas
 .PHONY	= all run clean
