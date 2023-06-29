@@ -1,5 +1,5 @@
+#include <iostream>
 #include "dtConvCont.h"
-#include <string>
 using namespace std;
 
 string  DtConvCont::getNom(){
@@ -18,7 +18,12 @@ void DtConvCont::setNum(string a){
     this->num = a;
 };
 
-DtConvCont::DtConvCont(int a, bool s, string d, string f):DtConversacion(int a, bool s){
-    this->nom = d;
-    this->num = f;
+DtConvCont::DtConvCont(int a, bool s, string d, string f):DtConversacion(a, s){
+    setNom(d);
+    setNum(f);
+};
+
+std::ostream& operator<<(std::ostream& os, DtConvCont& obj) {
+    os << "Nombre: " << obj.getNom() + obj.getNum()<< endl;
+  return os;
 };

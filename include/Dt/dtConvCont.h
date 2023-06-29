@@ -7,14 +7,14 @@ using namespace std;
 class DtConvCont : public DtConversacion {
     private:
         string nom;
-        int num;
+        string num;
     public:
-        void setNum(int);
+        void setNum(string);
         void setNom(string);
-        int getNum();
+        string getNum();
         string getNom();
         DtConvCont();
-        DtConvCont(int,bool,string,int);
+        DtConvCont(int,bool,string,string);
         ~DtConvCont();
 };
 
