@@ -1,7 +1,7 @@
 # Nota: no usar espacios, solo tabuladores en las ordenes.
 
 MAIN = main
-MODULES	= factory dataBase contmen sesion user conversacion mensaje dtConversacion dtMensaje  
+MODULES	= factory dataBase contmen sesion user conversacion mensaje dtConversacion dtMensaje dtConvCont dtConvGrupo dtMenCont dtMenFoto dtMenMultimedia dtMenText dtMenVideo convContacto convGrupo menContacto menFoto menMultimedia MenTexto menVideo
 
 # defino reglas
 .PHONY	= all run clean
