@@ -14,7 +14,7 @@ using namespace std;
 class Sesion : public ISesion {
     private:
         map<string, User*> sesiones; // https://www.youtube.com/watch?v=7mwgA9XFIEQ creo usare lista
-        User *sesionActiva = NULL;
+        User *sesionActiva;
     public: 
         bool haySesionActiva();
         bool existeSesion(string);

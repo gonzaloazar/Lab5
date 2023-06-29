@@ -1,7 +1,19 @@
 #include "contmen.h"
 using namespace std;
 
-ContMensaje::ContMensaje():IContMensajes(){};
+ContMensaje::ContMensaje(User *a){
+    this->miConv = NULL;
+    this->sesion = a;
+};
+
+ContMensaje::ContMensaje():IContMensajes(){
+    this->miConv = NULL;
+    this->sesion = NULL;
+};
+ContMensaje::~ContMensaje(){
+    this->miConv = NULL;
+    this->sesion = NULL;
+};
 
 void ContMensaje::setUser(User *a){
     this->sesion = a;

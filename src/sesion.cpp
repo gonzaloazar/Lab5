@@ -2,7 +2,9 @@
 
 
 
-Sesion::Sesion():ISesion(){};
+Sesion::Sesion():ISesion(){
+    this->sesionActiva = NULL;
+};
 
 bool Sesion::haySesionActiva(){
     if(this->sesionActiva != NULL)
@@ -35,13 +37,18 @@ bool Sesion::ingresarNumero(string num){
     }
 }
 void Sesion::registrarUser(string num, string nom, string desc, string url){
-    Fecha nuevaFecha;
     User *nuevo = new User(num,nom,desc,url);
-    this->sesiones.insert(pair<string, User*>(num,nuevo));
+    //this->sesiones.insert(pair<string, User*>(num,nuevo));
+    this->sesiones[num] = nuevo;
 };
 void Sesion::guardarFechaSesion(){
     this->sesionActiva->actUltConex();
 };
 void Sesion::cerrarSesion(){
     this->sesionActiva = NULL;
-}
+};
+
+Sesion::~Sesion(){
+    this->sesionActiva = NULL;
+    this->sesiones.clear();
+};

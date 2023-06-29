@@ -1,17 +1,29 @@
 #include <iostream>
 #include "factory.h"
+#include "contmen.h"
+#
 
-
+ContMensaje *conMen ;
 Sesion *login = new Sesion;
-ContMensaje *conMen = new ContMensaje;
-ModUser *modUser = new ModUser;
 
+Factory::Factory(){};
 
 ISesion *Factory::getISesion(){
     return login;
 };
 
-IContMensajes *Factory::getControladorMensajes(){
-  conMen->setUser(login->getSesionActiva());  
-  return conMen;
+IContMensajes *Factory::getControladorMensajes(){  
+    conMen = new ContMensaje(login->getSesionActiva());
+    return conMen;
+};
+
+ModUser *Factory::getModUser(){
+    return login->getSesionActiva();
+};
+
+Factory::~Factory(){
+    login->~Sesion();
+    delete login;
+    conMen->~ContMensaje();
+    delete conMen;
 };

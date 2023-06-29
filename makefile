@@ -1,7 +1,7 @@
 # Nota: no usar espacios, solo tabuladores en las ordenes.
 
 MAIN = main
-MODULES	=  
+MODULES	= factory dataBase contmen sesion user conversacion mensaje dtConversacion dtMensaje  
 
 # defino reglas
 .PHONY	= all run clean

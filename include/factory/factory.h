@@ -9,9 +9,11 @@ using namespace std;
 
 class Factory {
     public:
+        Factory();
         ISesion *getISesion();
         IContMensajes *getControladorMensajes();
         ModUser *getModUser();
+        ~Factory();
 };
 
 

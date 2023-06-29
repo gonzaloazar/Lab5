@@ -20,13 +20,13 @@ using namespace std;
 class IContMensajes {
     public:
     //verMensaje
-        virtual DtMensaje *selecMensaje(int idConv, int   idMensaje) = 0;
+        virtual DtMensaje *selectMensaje(int idConv, int   idMensaje) = 0;
         virtual map<int, DtConversacion*> listarConversacionesArch() = 0;
         virtual bool existeConvAct() = 0;
         virtual int cantConvArchivadas() = 0;
         virtual map<int, DtConversacion*> listarConversacionesAct() = 0;
         virtual map<int, DtMensaje*> listarMensajes(int idConversacion) = 0;
-        virtual void selecConv(int idConv) = 0;
+        virtual void selectConv(int idConv) = 0;
 };
 
 
