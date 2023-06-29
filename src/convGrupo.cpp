@@ -1,5 +1,4 @@
 #include "convGrupo.h"
-#include "conversacion.h"
 
 
 void ConvGrupo::setNombre(string _nombre){

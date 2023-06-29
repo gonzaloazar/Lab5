@@ -1,6 +1,4 @@
-#include <string>
 #include "user.h"
-using namespace std;
 
 
 void User::setNom(string n){
@@ -69,6 +67,7 @@ map<int, DtConversacion*> User::getConversacionesAct(){
     map<int, DtConversacion*> convAct;
     for (auto itr = this->conversaciones.begin(); itr != this->conversaciones.end(); itr++){
         if(!itr->second->estaArchivado()){
+<<<<<<< Updated upstream
             if(itr->second->getTipoConv() == "contacto"){
                 Conversacion *miConv = itr->second;
                 ConvContacto *conv = dynamic_cast<ConvContacto*>(miConv);
@@ -94,6 +93,13 @@ map<int, DtConversacion*> User::getConvsacionesArch(){
                 ConvContacto *conv = dynamic_cast<ConvContacto*>(miConv);
                 DtConvCont *nuevo = new DtConvCont(conv->getId(), conv->estaArchivado(),conv->getNombre(), conv->getNumero());
                 convArch[conv->getId()] = nuevo;
+=======
+            if(itr->second->getTipoConv == "contacto"){
+                Conversacion *miMen = itr->second;
+                ConvContacto* men = dynamic_cast<Conversacion*>(miMen);
+                DtConvCont *nuevo = new DtConvCont(men->getId(), men->estaArchivado(),men->getNombre(), men->getNumero());
+                convAct[men->getId()] = nuevo;
+>>>>>>> Stashed changes
             }else {
                 Conversacion *miMen = itr->second;
                 ConvGrupo *men = dynamic_cast<ConvGrupo*>(miMen);

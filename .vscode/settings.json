@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.scss": "scss",
+<<<<<<< Updated upstream
         "string": "cpp",
         "iosfwd": "cpp",
         "array": "cpp",
@@ -43,4 +44,9 @@
         "streambuf": "cpp",
         "typeinfo": "cpp"
     }
+=======
+        "string": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+>>>>>>> Stashed changes
 }
