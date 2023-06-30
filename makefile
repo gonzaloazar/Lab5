@@ -17,7 +17,7 @@ CPPDIR	= src
 ODIR	= obj
 
 # compilar
-all: $(ODIR)/fecha.o $(ODIR)/socio.o $(ODIR)/inscripcion.o $(ODIR)/clase.o $(ODIR)/spinning.o $(ODIR)/entrenamiento.o $(ODIR)/dtsocio.o $(ODIR)/dtclase.o $(ODIR)/dtentrenamiento.o $(ODIR)/dtspinning.o $(MAIN).o
+all: $(ODIR)/contmen.o $(ODIR)/dataBase.o $(ODIR)/inscripcion.o $(ODIR)/clase.o $(ODIR)/spinning.o $(ODIR)/entrenamiento.o $(ODIR)/dtsocio.o $(ODIR)/dtclase.o $(ODIR)/dtentrenamiento.o $(ODIR)/dtspinning.o $(MAIN).o
 	$(CC) $(CCFLAGS) -o $(MAIN) $^
 	@echo "Compilado: ok"
 
