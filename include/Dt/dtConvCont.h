@@ -5,11 +5,8 @@
 using namespace std;
 
 class DtConvCont : public DtConversacion {
-    private:
-        string nom;
-        string num;
     public:
-        void setNum(string);
+        string nom;
         void setNom(string);
         string getNum();
         string getNom();
