@@ -2,20 +2,21 @@
 #include "dtConvCont.h"
 using namespace std;
 
-string  DtConvCont::getNom(){
-    return this->nom;
-};
-
-string DtConvCont::getNum(){
-    return this->num;
-};
 
 void DtConvCont::setNom(string a){
     this->nom = a;
 };
 
 void DtConvCont::setNum(string a){
-    this->num = a;
+    this->num=a;
+};
+
+string  DtConvCont::getNom(){
+    return this->nom;
+};
+
+string DtConvCont::getNum(){
+    return this->num;
 };
 
 DtConvCont::DtConvCont(int a, bool s, string d, string f):DtConversacion(a, s){

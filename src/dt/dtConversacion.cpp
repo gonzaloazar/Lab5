@@ -17,7 +17,7 @@ bool DtConversacion::getEstaArch(){
 };
 
 int DtConversacion::getId(){
-    return this->id
+    return this->id;
 };
 
 DtConversacion::DtConversacion(int a, bool s){
