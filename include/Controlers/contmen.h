@@ -14,7 +14,6 @@ class ContMensaje : public IContMensajes {
         void setConv(int convID);
         User *getUser();
         Conversacion *getConver();
-        void setConv(int convID);
         ~ContMensaje();
         
         DtMensaje *getDtMensaje(int menID);
