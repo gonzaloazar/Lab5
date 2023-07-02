@@ -1,5 +1,5 @@
-#ifndef dtMenFoto_h
-#define dtMenFoto_h
+#ifndef DTMENFOTO_H
+#define DTMENFOTO_H
 #include "dtMenMultimedia.h"
 using namespace std;
 

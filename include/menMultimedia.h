@@ -1,5 +1,5 @@
-#ifndef menMultimedia_h
-#define menMultimedia_h
+#ifndef MENMULTIMEDIA_H
+#define MENMULTIMEDIA_H
 #include "mensaje.h"
 
 

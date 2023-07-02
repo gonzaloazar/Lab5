@@ -1,5 +1,5 @@
-#ifndef iAltagrupo_h
-#define iAltagrupo_h
+#ifndef IALTAGRUPO_H
+#define IALTAGRUPO_H
 #include "./Dt/dtContacto.h"
 #include "./convGrupo.h"
 

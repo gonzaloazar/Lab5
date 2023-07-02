@@ -27,3 +27,6 @@ ConvGrupo::ConvGrupo(int id,bool estaarchivado,string _nombre,string newURL,map<
     this->participantesAdmin = partAdm;
     this->creacion.actualizarFecha();
 };
+
+ConvGrupo::~ConvGrupo(){
+};

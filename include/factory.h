@@ -1,5 +1,5 @@
-#ifndef factory_h
-#define factory_h
+#ifndef FACTORY_H
+#define FACTORY_H
 #include "contmen.h"
 #include "sesion.h"
 #include "user.h"

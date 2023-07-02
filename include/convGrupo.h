@@ -1,5 +1,5 @@
-#ifndef convGrupo_h
-#define convGrupo_h
+#ifndef CONVGRUPO_H
+#define CONVGRUPO_H
 #include <map>
 #include "conversacion.h"
 #include "fecha.h"

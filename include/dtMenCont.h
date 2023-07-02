@@ -1,5 +1,5 @@
-#ifndef dtMenCont_h
-#define dtMenCont_h
+#ifndef DTMENCONT_H
+#define DTMENCONT_H
 #include "dtMensaje.h"
 
 using namespace std;

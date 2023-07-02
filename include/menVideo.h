@@ -1,5 +1,5 @@
-#ifndef menVideo_h
-#define menVideo_h
+#ifndef MENVIDEO_H
+#define MENVIDEO_H
 #include "menMultimedia.h"
 
 class MenVideo : public MenMultimedia {

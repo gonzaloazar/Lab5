@@ -1,5 +1,5 @@
-#ifndef dtConversacion_h
-#define dtConversacion_h
+#ifndef DTCONVERSACION_H
+#define DTCONVERSACION_H
 #include <string>
 using namespace std;
 

@@ -1,5 +1,5 @@
-#ifndef dtConvGrupo_h
-#define dtConvGrupo_h
+#ifndef DTCONVGRUPO_H
+#define DTCONVGRUPO_H
 #include "dtConversacion.h"
 #include "fecha.h"
 #include <string>

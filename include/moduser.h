@@ -1,5 +1,5 @@
-#ifndef moduser_h
-#define moduser_h
+#ifndef MODUSER_H
+#define MODUSER_H
 #include <string>
 using namespace std;
 

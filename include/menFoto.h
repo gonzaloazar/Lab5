@@ -1,5 +1,5 @@
-#ifndef menFoto_h
-#define menFoto_h
+#ifndef MENFOTO_H
+#define MENFOTO_H
 #include "menMultimedia.h"
 
 class MenFoto : public MenMultimedia {

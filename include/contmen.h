@@ -1,5 +1,5 @@
-#ifndef contmen_h
-#define contmen_h 
+#ifndef CONTMEN_H
+#define CONTMEN_H
 #include "icontmen.h"
 using namespace std;
 

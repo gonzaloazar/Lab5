@@ -1,5 +1,5 @@
-#ifndef conversacion_h
-#define conversacion_h
+#ifndef CONVERSACION_H
+#define CONVERSACION_H
 #include <iostream>
 #include <map>
 #include "menContacto.h"

@@ -1,5 +1,5 @@
-#ifndef menTexto_h
-#define menTexto_h
+#ifndef MENTEXTO_H
+#define MENTEXTO_H
 #include "mensaje.h"
 
 

@@ -1,5 +1,5 @@
-#ifndef mensaje_h
-#define mensaje_h
+#ifndef MENSAJE_H
+#define MENSAJE_H
 #include <iostream>
 #include <map>
 #include "fecha.h"

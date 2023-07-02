@@ -1,5 +1,5 @@
-#ifndef dtMenMultimedia_h
-#define dtMenMultimedia_h 
+#ifndef DTMENMULTIMEDIA_H
+#define DTMENMULTIMEDIA_H
 #include "dtMensaje.h"
 
 using namespace std;

@@ -1,5 +1,5 @@
-#ifndef icontmen_h
-#define icontmen_h
+#ifndef ICONTMEN_H
+#define ICONTMEN_H
 #include <map>
 #include "user.h"
 #include "convContacto.h"

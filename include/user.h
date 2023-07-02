@@ -1,5 +1,5 @@
-#ifndef user_h
-#define user_h 
+#ifndef USER_H
+#define USER_H
 #include <string>
 #include <map>
 #include "convContacto.h"

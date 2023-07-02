@@ -1,5 +1,5 @@
-#ifndef convContacto_h
-#define convContacto_h
+#ifndef CONVCONTACTO_H
+#define CONVCONTACTO_H
 #include <iostream>
 using namespace std;
 #include "conversacion.h"

@@ -1,5 +1,5 @@
-#ifndef clogin_h
-#define clogin_h
+#ifndef CLOGIN_H
+#define CLOGIN_H
 #include <string>
 using namespace std;
 

@@ -1,5 +1,5 @@
-#ifndef menContacto_h
-#define menContacto_h
+#ifndef MENCONTACTO_H
+#define MENCONTACTO_H
 #include "mensaje.h"
 
 class MenContacto : public Mensaje {

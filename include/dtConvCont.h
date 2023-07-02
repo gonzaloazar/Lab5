@@ -1,5 +1,5 @@
-#ifndef dtConvCont_h
-#define  dtConvCont_h
+#ifndef DTCONVCONT_H
+#define DTCONVCONT_H
 #include "dtConversacion.h"
 #include <string>
 using namespace std;

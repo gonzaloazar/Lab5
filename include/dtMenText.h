@@ -1,5 +1,5 @@
-#ifndef dtMenText_h
-#define dtMenText_h
+#ifndef DTMENTEXT_H
+#define DTMENTEXT_H
 #include "dtMensaje.h"
 
 using namespace std;
