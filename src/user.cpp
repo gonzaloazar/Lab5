@@ -34,11 +34,12 @@ string User::getDesc(){
     return this->desc;
 };
 
-Fecha User::getFechaConex(){
-    //return this->ultConex;
+string User::getFechaConex(){
+    return this->ultConex->getFechaString();
 };
-Fecha User::getFechaReg(){
-    //return this->fechaReg;
+
+string User::getFechaReg(){
+    return this->fechaReg->getFechaString();
 };
 
 User::User(string a, string s, string d, string f){
@@ -70,12 +71,12 @@ map<int, DtConversacion*> User::getConversacionesAct(){
             if(itr->second->getTipoConv() == "contacto"){
                 Conversacion *miConv = itr->second;
                 ConvContacto *conv = dynamic_cast<ConvContacto*>(miConv);
-                DtConvCont *nuevo = new DtConvCont(conv->getId(), conv->estaArchivado(),conv->getNombre());
+                DtConvCont *nuevo = new DtConvCont(conv->getId(), conv->estaArchivado(),conv->getNombre(),conv->getNumero());
                 convAct[conv->getId()] = nuevo;
             }else {
                 Conversacion *miConv = itr->second;
                 ConvGrupo *conv = dynamic_cast<ConvGrupo*>(miConv);
-                DtConvGrupo *nuevo = new DtConvGrupo(conv->getId(), conv->estaArchivado(),conv->getNombre(),conv->getURL());
+                DtConvGrupo *nuevo = new DtConvGrupo(conv->getId(), conv->estaArchivado(),conv->getNombre(),conv->getURL(),conv->getFecha());
                 convAct[conv->getId()] = nuevo;
             }
         }

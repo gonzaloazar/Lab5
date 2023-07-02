@@ -1,5 +1,5 @@
-#ifndef CONTACTO.H
-#define CONTACTO.Hh
+#ifndef CONTACTO_H
+#define CONTACTO_H
 #include "iostream"
 using namespace std;
 

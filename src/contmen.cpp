@@ -58,7 +58,7 @@ map<int, DtConversacion*> ContMensaje::listarConversacionesArch(){
 
 map<int, DtMensaje*> ContMensaje::listarMensajes(int idConversacion){
     this->setConv(idConversacion);
-    this->miConv->getDtMensajes();
+    return this->miConv->getDtMensajes();
 };
 
 void ContMensaje::selectConv(int idConv){
