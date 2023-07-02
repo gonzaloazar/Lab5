@@ -1,4 +1,4 @@
-#include "convGrupo.h"
+#include "../include/convGrupo.h"
 
 
 void ConvGrupo::setNombre(string _nombre){

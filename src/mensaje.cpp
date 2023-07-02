@@ -1,4 +1,4 @@
-#include "mensaje.h"
+#include "../include/mensaje.h"
 
 void Mensaje::setCod(int _cod){
     this->codigo = _cod;

@@ -1,4 +1,4 @@
-#include "menFoto.h"
+#include "../include/menFoto.h"
 
 
 void MenFoto::setFormato(string newForm){

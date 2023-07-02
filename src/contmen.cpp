@@ -1,4 +1,4 @@
-#include "contmen.h"
+#include "../include/contmen.h"
 using namespace std;
 
 ContMensaje::ContMensaje(User *a){

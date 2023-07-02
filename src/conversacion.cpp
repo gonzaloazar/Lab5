@@ -1,4 +1,4 @@
-#include "conversacion.h"
+#include "../include/conversacion.h"
 
 
 int Conversacion::getId(){

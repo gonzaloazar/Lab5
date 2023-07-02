@@ -15,3 +15,6 @@ string MenVideo::getTipoMensaje(){
 MenVideo::MenVideo(int _codigo,string miNum,string _url,float _duracion):MenMultimedia(_codigo,miNum,_url){
     this->duracion=_duracion;
 };     
+
+MenVideo::~MenVideo(){
+};
