@@ -26,7 +26,7 @@ string MenFoto::getTipoMensaje(){
 };
 
 
-MenFoto::MenFoto(int cod, string miNum, string url, string newForm, float newTam, string newTOpc) : MenMultimedia(cod, miNum, url){
+MenFoto::MenFoto(int cod,Fecha f, string miNum, string url, string newForm, float newTam, string newTOpc) : MenMultimedia(cod,f, miNum, url){
     this->formato = newForm;
     this->tamanio = newTam;
     this->textOpcional = newTOpc;

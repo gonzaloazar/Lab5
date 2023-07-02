@@ -12,7 +12,7 @@ string MenVideo::getTipoMensaje(){
     return "video";
 };
 
-MenVideo::MenVideo(int _codigo,string miNum,string _url,float _duracion):MenMultimedia(_codigo,miNum,_url){
+MenVideo::MenVideo(int _codigo,Fecha fecha,string miNum,string _url,float _duracion):MenMultimedia(_codigo,fecha,miNum,_url){
     this->duracion=_duracion;
 };     
 

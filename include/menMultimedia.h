@@ -9,7 +9,7 @@ class MenMultimedia : public Mensaje{
     public:
         void setURL(string);
         string getURL();
-        MenMultimedia(int codigo, string miNum, string url);
+        MenMultimedia(int codigo, Fecha, string miNum, string url);
         ~MenMultimedia();
 };
 

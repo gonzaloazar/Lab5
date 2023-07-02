@@ -11,7 +11,7 @@ class MenTexto : public Mensaje {
         void setTexto(string);
         string getTexo();
         MenTexto();
-        MenTexto(int cod, string nom, string texto);
+        MenTexto(int cod,Fecha,string em, string texto);
         string getTipoMensaje();
         ~MenTexto();
 };

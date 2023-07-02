@@ -7,7 +7,7 @@ void DtConvCont::setNom(string a){
     this->nom = a;
 };
 
-void DtConvCont::setNum(int a){
+void DtConvCont::setNum(string a){
     this->num=a;
 };
 
@@ -15,11 +15,11 @@ string DtConvCont::getNom(){
     return this->nom;
 };
 
-int DtConvCont::getNum(){
+string DtConvCont::getNum(){
     return this->num;
 };
 
-DtConvCont::DtConvCont(int a, bool s, string d, int f):DtConversacion(a, s){
+DtConvCont::DtConvCont(int a, bool s, string d, string f):DtConversacion(a, s){
     setNom(d);
     setNum(f);
 };

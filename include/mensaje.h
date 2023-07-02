@@ -16,10 +16,14 @@ class Mensaje {
         void setCod(int);
         void setFecha();
         void setVisto(string);
-        bool fueVisto(string);
+        void setNoVisto(string);
+        bool fueVisto(string); // da false si no existe el mensaje o si lo elimine
+        bool esFalseVisto(string); // cuando se elimina un mensaje en una conv se setea false el visto, entonces necesito esto para saber si lo elimine o es porque no se sabe si lo vio o no.
         bool esEmisor(string);
         int getCod();
+        string getEmisor();
         string getFecha();
+        Fecha getFecha2();
         virtual string getTipoMensaje() = 0;
         Mensaje();
         Mensaje(int cod,Fecha,string miNum);

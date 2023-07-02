@@ -21,7 +21,7 @@ string MenContacto::getTipoMensaje(){
 };
 
 
-MenContacto::MenContacto(int cod,string miNum,string nom,string num):Mensaje(cod,miNum){
+MenContacto::MenContacto(int cod,Fecha f,string miNum,string nom,string num):Mensaje(cod,f,miNum){
     this->nom = nom;
     this->num = num;
 };

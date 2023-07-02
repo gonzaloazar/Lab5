@@ -4,16 +4,16 @@
 
 
 class DtConvCont : public DtConversacion {
-    public:
+    private:
         string nom;
-        int num;
+        string num;
+    public:
         void setNom(string);
-        void setNum(int);
-        int getNum();
+        void setNum(string);
+        string getNum();
         string getNom();
-        //string getUrl();
         DtConvCont();
-        DtConvCont(int,bool,string,int);
+        DtConvCont(int,bool,string,string);
         ~DtConvCont();
         string getTipoConv();
 };

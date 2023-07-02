@@ -1,7 +1,7 @@
 # Nota: no usar espacios, solo tabuladores en las ordenes.
 
 MAIN = main
-MODULES	= factory contmen sesion user conversacion mensaje dtConversacion dtMensaje dtConvCont dtConvGrupo dtMenCont dtMenFoto dtMenMultimedia dtMenText dtMenVideo convContacto convGrupo menContacto menFoto menMultimedia menTexto menVideo
+MODULES	= factory contacto contmen sesion user conversacion mensaje dtConversacion dtMensaje dtConvCont dtConvGrupo dtMenCont dtMenFoto dtMenMultimedia dtMenText dtMenVideo convContacto convGrupo menContacto menFoto menMultimedia menTexto menVideo
 
 # defino reglas
 .PHONY	= all run clean
@@ -17,7 +17,7 @@ CPPDIR	= src
 ODIR	= obj
 
 # compilar
-all:  $(ODIR)/fecha.o $(ODIR)/mensaje.o $(ODIR)/menContacto.o $(ODIR)/menMultimedia.o $(ODIR)/menFoto.o $(ODIR)/menVideo.o $(ODIR)/menTexto.o $(ODIR)/dtMensaje.o $(ODIR)/dtMenMultimedia.o $(ODIR)/dtMenFoto.o $(ODIR)/dtMenVideo.o $(ODIR)/dtMenCont.o $(ODIR)/dtMenText.o $(ODIR)/dtConversacion.o $(ODIR)/dtConvGrupo.o $(ODIR)/dtConvCont.o $(ODIR)/conversacion.o $(ODIR)/convContacto.o $(ODIR)/convGrupo.o $(ODIR)/user.o $(ODIR)/sesion.o $(ODIR)/contmen.o $(ODIR)/factory.o $(MAIN).o
+all:  $(ODIR)/contacto.o $(ODIR)/fecha.o $(ODIR)/mensaje.o $(ODIR)/menContacto.o $(ODIR)/menMultimedia.o $(ODIR)/menFoto.o $(ODIR)/menVideo.o $(ODIR)/menTexto.o $(ODIR)/dtMensaje.o $(ODIR)/dtMenMultimedia.o $(ODIR)/dtMenFoto.o $(ODIR)/dtMenVideo.o $(ODIR)/dtMenCont.o $(ODIR)/dtMenText.o $(ODIR)/dtConversacion.o $(ODIR)/dtConvGrupo.o $(ODIR)/dtConvCont.o $(ODIR)/conversacion.o $(ODIR)/convContacto.o $(ODIR)/convGrupo.o $(ODIR)/user.o $(ODIR)/sesion.o $(ODIR)/contmen.o $(ODIR)/factory.o $(MAIN).o
 	$(CC) $(CCFLAGS) -o $(MAIN) $^
 	@echo "Compilado: ok"
 
@@ -26,11 +26,13 @@ run: $(MAIN).o
 	./$(MAIN)
 
 # compilo el main
-$(ODIR)/$(MAIN).o:  $(ODIR)/fecha.cpp $(ODIR)/mensaje.cpp $(ODIR)/menContacto.cpp $(ODIR)/menMultimedia.cpp $(ODIR)/menFoto.cpp $(ODIR)/menVideo.cpp $(ODIR)/menTexto.cpp $(ODIR)/dtMensaje.cpp $(ODIR)/dtMenMultimedia.cpp $(ODIR)/dtMenFoto.cpp $(ODIR)/dtMenVideo.cpp $(ODIR)/dtMenCont.cpp $(ODIR)/dtMenText.cpp $(ODIR)/dtConversacion.cpp $(ODIR)/dtConvGrupo.cpp $(ODIR)/dtConvCont.cpp $(ODIR)/conversacion.cpp $(ODIR)/convContacto.cpp $(ODIR)/convGrupo.cpp $(ODIR)/user.cpp $(ODIR)/sesion.cpp $(ODIR)/contmen.cpp $(ODIR)/factory.cpp $(MAIN).cpp
-	$(CC) $(CCFLAGS) -c $(MAIN).cpp $(ODIR)/fecha.o $(ODIR)/mensaje.o $(ODIR)/menContacto.o $(ODIR)/menMultimedia.o $(ODIR)/menFoto.o $(ODIR)/menVideo.o $(ODIR)/menTexto.o $(ODIR)/dtMensaje.o $(ODIR)/dtMenMultimedia.o $(ODIR)/dtMenFoto.o $(ODIR)/dtMenVideo.o $(ODIR)/dtMenCont.o $(ODIR)/dtMenText.o $(ODIR)/dtConversacion.o $(ODIR)/dtConvGrupo.o $(ODIR)/dtConvCont.o $(ODIR)/conversacion.o $(ODIR)/convContacto.o $(ODIR)/convGrupo.o $(ODIR)/user.o $(ODIR)/sesion.o $(ODIR)/contmen.o $(ODIR)/factory.o -o $@
+$(ODIR)/$(MAIN).o:  $(ODIR)/contacto.cpp $(ODIR)/fecha.cpp $(ODIR)/mensaje.cpp $(ODIR)/menContacto.cpp $(ODIR)/menMultimedia.cpp $(ODIR)/menFoto.cpp $(ODIR)/menVideo.cpp $(ODIR)/menTexto.cpp $(ODIR)/dtMensaje.cpp $(ODIR)/dtMenMultimedia.cpp $(ODIR)/dtMenFoto.cpp $(ODIR)/dtMenVideo.cpp $(ODIR)/dtMenCont.cpp $(ODIR)/dtMenText.cpp $(ODIR)/dtConversacion.cpp $(ODIR)/dtConvGrupo.cpp $(ODIR)/dtConvCont.cpp $(ODIR)/conversacion.cpp $(ODIR)/convContacto.cpp $(ODIR)/convGrupo.cpp $(ODIR)/user.cpp $(ODIR)/sesion.cpp $(ODIR)/contmen.cpp $(ODIR)/factory.cpp $(MAIN).cpp
+	$(CC) $(CCFLAGS) -c $(MAIN).cpp $(ODIR)/fecha.o $(ODIR)/fecha.o $(ODIR)/mensaje.o $(ODIR)/menContacto.o $(ODIR)/menMultimedia.o $(ODIR)/menFoto.o $(ODIR)/menVideo.o $(ODIR)/menTexto.o $(ODIR)/dtMensaje.o $(ODIR)/dtMenMultimedia.o $(ODIR)/dtMenFoto.o $(ODIR)/dtMenVideo.o $(ODIR)/dtMenCont.o $(ODIR)/dtMenText.o $(ODIR)/dtConversacion.o $(ODIR)/dtConvGrupo.o $(ODIR)/dtConvCont.o $(ODIR)/conversacion.o $(ODIR)/convContacto.o $(ODIR)/convGrupo.o $(ODIR)/user.o $(ODIR)/sesion.o $(ODIR)/contmen.o $(ODIR)/factory.o -o $@
 
 # compilo los modulos
-
+$(ODIR)/contacto.o: $(HDIR)/contacto.h $(CPPDIR)/contacto.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/contacto.cpp -o $@
+  
 $(ODIR)/fecha.o: $(HDIR)/fecha.h $(CPPDIR)/fecha.cpp
 	$(CC) $(CCFLAGS) -c $(CPPDIR)/fecha.cpp -o $@
 

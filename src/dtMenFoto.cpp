@@ -41,7 +41,7 @@ DtMenFoto::~DtMenFoto(){
 };
 
 std::ostream& operator<<(std::ostream& os, DtMenFoto& obj){
-    os << obj.getFormato() << " " << obj.getId() << " " 
+    os << obj.getFecha().getFechaString()<< " "<< obj.getFormato() << " " << obj.getId() << " " 
     << obj.getTamanio() << " " << obj.getTextOpc() << " " 
     << obj.getURL() << endl;
     return os;

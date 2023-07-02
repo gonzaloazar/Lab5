@@ -14,6 +14,7 @@
 #include "dtMenFoto.h"
 #include "dtMenText.h"
 #include "dtMenVideo.h"
+#include "contacto.h"
 using namespace std;
 
 
@@ -30,6 +31,10 @@ class IContMensajes {
         virtual void archivarConv(int idConv) = 0;
     //eliminarMensaje
         virtual void eliminarMensaje(int idConv, int idMensaje) = 0;
+    //enviarMensaje
+        virtual int crearConversacion(string num) = 0;
+        virtual void enviarMensaje(int idConv, DtMensaje *mensaje) = 0;
+        virtual map<string, Contacto*> listarContactosSesion() = 0;
 };
 
 

@@ -1,7 +1,7 @@
 #include "../include/convContacto.h"
 
 
-int ConvContacto::getNumero(){
+string ConvContacto::getNumero(){
     return this->numero;
 };
 
@@ -9,7 +9,7 @@ string ConvContacto::getNombre(){
     return this->nombre;
 };
 
-void ConvContacto::setNumero(int _numero){
+void ConvContacto::setNumero(string _numero){
     this->numero=_numero;
 };
 
@@ -21,7 +21,7 @@ string ConvContacto::getTipoConv(){
     return "contacto";
 };
 
-ConvContacto::ConvContacto(int id,bool estaarchivado,int _numero,string _nombre):Conversacion(id, estaarchivado){
+ConvContacto::ConvContacto(int id,bool estaarchivado,string _numero,string _nombre):Conversacion(id, estaarchivado){
     setNombre(_nombre);
     setNumero(_numero);
 };

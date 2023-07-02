@@ -26,8 +26,10 @@ class ContMensaje : public IContMensajes {
         virtual map<int, DtMensaje*> listarMensajes(int idConversacion);//Conv-66
         virtual void selectConv(int idConv);//En cpp.
         virtual void archivarConv(int idConv);//En cpp.
-        
+        void enviarMensaje(int idConv, DtMensaje *mensaje);
         void eliminarMensaje(int idConv, int idMensaje);
+        int crearConversacion(string contactoNum);
+        virtual map<string, Contacto*> listarContactosSesion();
 };
 
 #endif

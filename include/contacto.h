@@ -13,7 +13,8 @@ class Contacto{
         void setNombre(string nombre);
         void setNumero(string);
         string getNombre();
-        string getNumero();        
+        string getNumero();  
+        ~Contacto();      
 };
 
 #endif

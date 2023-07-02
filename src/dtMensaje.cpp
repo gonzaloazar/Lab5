@@ -5,7 +5,7 @@ using namespace std;
 
 DtMensaje::DtMensaje(int x,Fecha f,string num){
     this->id = x;
-    fecha=f;
+    this->fecha=f;
     this->visto[num] = true;
     this->emisor = num;
 };
@@ -31,14 +31,25 @@ DtMensaje::~DtMensaje(){
 DtMensaje::DtMensaje(){
 };
 
-void Mensaje::setVisto(string a){
+Fecha DtMensaje::getFecha(){
+    return this->fecha;
+}
+
+void DtMensaje::setVisto(string a){
     this->visto[a] = true;
 };
 
+void DtMensaje::setNoVisto(string a){
+    this->visto[a] = false;
+};
 
-bool Mensaje::fueVisto(string a){
+bool DtMensaje::fueVisto(string a){
     if(this->visto[a] == true)
         return true;
     else 
         return false;
 };
+
+string DtMensaje::getEmisor(){
+    return this->emisor;
+}

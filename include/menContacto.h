@@ -11,7 +11,7 @@ class MenContacto : public Mensaje {
         void setNum(string);
         string getNum();
         string getNom();
-        MenContacto(int codigo, string miNum, string nom, string num);
+        MenContacto(int codigo, Fecha,string miNum, string nom, string num);
         string getTipoMensaje();
         ~MenContacto();
 };

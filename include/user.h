@@ -8,6 +8,7 @@
 #include "dtConvGrupo.h"
 #include "fecha.h"
 #include "moduser.h"
+#include "contacto.h"
 using namespace std;
 
 class User : public ModUser {
@@ -19,6 +20,7 @@ class User : public ModUser {
         Fecha *ultConex;
         Fecha *fechaReg;
         map<int, Conversacion*> conversaciones;
+        map<string, User*> contactos;
     public:
         void setNum(string);
         void setNom(string);
@@ -32,6 +34,7 @@ class User : public ModUser {
         string getURL();
         string getFechaConex();
         string getFechaReg();
+        int getSizeConv();
         User(string num, string nom, string desc, string url);
         ~User();
         
@@ -45,6 +48,9 @@ class User : public ModUser {
         virtual void actualizarURL(string newURL);
         virtual void actualizarNombre(string newNombre);
         virtual void actualizarDescripcion(string newDesc);
+
+        void crearConv(int id, string num);
+        map<string, Contacto*> getContactos();
 };
 
 #endif

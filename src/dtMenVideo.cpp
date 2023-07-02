@@ -21,6 +21,6 @@ DtMenVideo::DtMenVideo(int a,Fecha f,string s1,string s,float d):DtMenMultimedia
 DtMenVideo::~DtMenVideo(){
 };
 std::ostream& operator<<(std::ostream& os, DtMenVideo& obj){
-    os << obj.getFecha().getFechaToString() << " " << obj.getId() << " " << obj.getDuracion() << " " << obj.getURL() << endl;
+    os << obj.getFecha().getFechaString()<< " " << obj.getId() << " " << obj.getDuracion() << " " << obj.getURL() << endl;
     return os;
 };

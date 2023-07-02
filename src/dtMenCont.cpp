@@ -18,7 +18,7 @@ string DtMenCont::getNum(){
     return this->num;
 };
 
-DtMenCont::DtMenCont(int a,Fecha f, string s, string d):DtMensaje(a,f){
+DtMenCont::DtMenCont(int a,Fecha f,string num, string s, string d):DtMensaje(a,f,num){
     this->num = s;
     this->nom = d;
 };
@@ -30,5 +30,6 @@ string DtMenCont::getTipoMensaje(){
     return "contacto";
 }
 std::ostream& operator<<(std::ostream& os, DtMenCont& obj){
-    os <<obj.getFecha().getFechaToString() << " " << obj.getId() << " " << obj.getNom() << " " << obj.getNum()<<endl;
+    os <<obj.getFecha().getFechaString() << " " << obj.getId() << " " << obj.getNom() << " " << obj.getNum()<<endl;
+    return os;
 };

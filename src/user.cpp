@@ -42,6 +42,10 @@ string User::getFechaReg(){
     return this->fechaReg->getFechaString();
 };
 
+int User::getSizeConv(){
+    return this->conversaciones.size();
+};
+
 User::User(string a, string s, string d, string f){
     this->num = a;
     this->nom = s;
@@ -91,7 +95,7 @@ map<int, DtConversacion*> User::getConvsacionesArch(){
             if(itr->second->getTipoConv() == "contacto"){
                 Conversacion *miConv = itr->second;
                 ConvContacto *conv = dynamic_cast<ConvContacto*>(miConv);
-                DtConvCont *nuevo = new DtConvCont(conv->getId(), conv->estaArchivado(),conv->getNombre(), conv->getNumero());
+                DtConvCont *nuevo = new DtConvCont(conv->getId(),conv->estaArchivado(),conv->getNombre(), conv->getNumero());
                 convArch[conv->getId()] = nuevo;
             }else {
                 Conversacion *miMen = itr->second;
@@ -137,4 +141,19 @@ void User::actualizarNombre(string newNombre){
 void User::actualizarURL(string newURL){
     this->setURL(newURL);
     cout << endl <<"URL actualizada." << endl;
+};
+
+void User::crearConv(int id, string num){
+    ConvContacto *n = new ConvContacto(id,false,this->contactos[num]->getNum(), this->contactos[num]->getNom());
+    this->conversaciones[id] = n;
+};
+
+map<string, Contacto*> User::getContactos(){
+    map<string, Contacto*> misCont;
+    for (auto itr = this->contactos.begin(); itr != this->contactos.end(); itr++){
+        User *us = itr->second;
+        Contacto *n = new Contacto(us->getNom(),us->getNum());
+        misCont[us->getNom()] = n;
+    }
+    return misCont;
 };

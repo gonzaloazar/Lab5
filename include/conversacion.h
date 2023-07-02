@@ -28,7 +28,7 @@ class Conversacion {
     ~Conversacion();
     DtMensaje *getDtMensaje(int idMensaje, string num);
     map<int, DtMensaje*> getDtMensajes(string num);
-
-    void elimMensaje(int idMensaje);
+    void envMensaje(string num, DtMensaje *mensaje);
+    void elimMensaje(int idMensaje, string miNum);
 };
 #endif

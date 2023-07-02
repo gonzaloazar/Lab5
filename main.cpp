@@ -37,9 +37,88 @@ int main(){
                     cout << "Ingrese la Opcion: " << endl;
                     cin >> ent2;
                     switch(ent2){
-                    case 2:
-                    
-                        break;
+                    case 2: {
+                        IContMensajes *reg = aplicacion.getControladorMensajes();
+                        map<int, DtConversacion*> convAct = reg->listarConversacionesAct();
+                        map<int, DtConversacion*> convArch = reg->listarConversacionesArch();
+                        if(reg->existeConvAct()){
+                            for (auto itr = convAct.begin(); itr != convAct.end(); itr++){
+                                cout << itr->second;
+                            } 
+                        }
+                        cout << reg->cantConvArchivadas() << endl;
+                        int eleccion;
+                        cout <<"1. Seleccionar una conversacion activa"<< endl;
+                        cout <<"2. Ver las conversaciones archivadas" << endl;
+                        cout <<"3. Enviar un mensaje a un contacto con el cual aun no ha iniciado una conversacion"<<endl;
+                        cin >> eleccion;
+                        Fecha bas;
+                        bas.actualizarFecha();
+                        int idConv;
+                        if(eleccion == 3){
+                            map<string, Contacto*> misCont = reg->listarContactosSesion();
+                            for (auto itr = misCont.begin(); itr != misCont.end(); itr++){
+                                cout << itr->second;
+                            }
+                            cout << "Escriba numero de contacto: "<< endl;
+                            string num;
+                            cin >> num;
+                            idConv = reg->crearConversacion(num);
+                        }else if(eleccion == 2){
+                            for (auto itr = convArch.begin(); itr != convArch.end(); itr++){
+                                cout << itr->second;
+                            } 
+                            cout << "Seleccione el id de conversacion: " << endl;
+                            int idConv;
+                        } else {
+                            cout << "Seleccione el id de conversacion: " << endl;
+                            cin >> idConv;
+                        }
+                        cout << "Tipo mensaje: "<< endl;
+                        cout << "1: Texto" << endl;
+                        cout << "2: Contacto" << endl;
+                        cout << "3: Foto" << endl;
+                        cout << "4: Video" << endl;
+                        int opc;
+                        cin >> opc;
+                        
+                        if(opc == 1) {
+                            cout << "Escriba el texto: " << endl;
+                            string text;
+                            cin >> text;
+                            DtMenText * n = new DtMenText(1,bas,"elNumSaleEnIContMen", text); // int,Fecha,string,string
+                            reg->enviarMensaje(idConv,n);
+                        }else if(opc == 2){
+                            cout << "Escriba el nombre: " << endl;
+                            string nom,num;
+                            cin >> nom;
+                            cout << "Escriba el numero: " << endl;
+                            cin >> num;
+                            DtMenCont * n = new DtMenCont(1,bas,"elNumSaleEnIContMen",num,nom);// int,Fecha,string,string,string
+                            reg->enviarMensaje(idConv,n);
+                        }else if(opc == 3){
+                            cout << "Escriba el formato: " << endl;
+                            string form,text,url;
+                            float tam;
+                            cin >> form;
+                            cout << "Escriba el tamanio: " << endl;
+                            cin >> tam;
+                            cout << "Escriba texto opcional: " << endl;
+                            cin >> text;
+                            cout << "Escriba el URL: " << endl;
+                            cin >> url;
+                            DtMenFoto * n = new DtMenFoto(1,bas,"elNumSaleEnIContMen",url,form,tam,text);// int,Fecha,string,string,string
+                            reg->enviarMensaje(idConv,n);
+                        }else {
+                            string url; float dur;
+                            cout << "Escriba el URL: " << endl;
+                            cin >> url;
+                            cout << "Escriba la duracion: " << endl;
+                            cin >> dur;
+                            DtMenVideo * n = new DtMenVideo(1,bas,"elNumSaleEnIContMen",url,dur);
+                            reg->enviarMensaje(idConv,n);
+                        }
+                        break;}
                     case 3: {
                         IContMensajes *reg = aplicacion.getControladorMensajes();
                         map<int, DtConversacion*> convAct = reg->listarConversacionesAct();
@@ -70,7 +149,8 @@ int main(){
                         cout << "Seleccionar mensaje a eliminar: "<<endl;
                         cin >> idMens;
                         reg->eliminarMensaje(idConv,idMens);
-                        break;}
+                        break;
+                        }
                     case 4:{
                         IContMensajes *reg = aplicacion.getControladorMensajes();
                         map<int, DtConversacion*> convAct = reg->listarConversacionesAct();

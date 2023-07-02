@@ -17,24 +17,15 @@ class DtMensaje {
         void setId(int);
         int getId();
         void setVisto(string);
+        void setNoVisto(string);
         bool fueVisto(string);
         bool esEmisor(string);
+        string getEmisor();
         virtual string getTipoMensaje() = 0;
+        Fecha getFecha();
         DtMensaje();
         DtMensaje(int,Fecha,string num);
         ~DtMensaje();
 };
-void Mensaje::setVisto(string a){
-    this->visto[a] = true;
-};
-
-
-bool Mensaje::fueVisto(string a){
-    if(this->visto[a] == true)
-        return true;
-    else 
-        return false;
-};
-
 
 #endif

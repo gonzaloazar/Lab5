@@ -73,5 +73,19 @@ void ContMensaje::archivarConv(int idConv){
 
 void ContMensaje::eliminarMensaje(int idConv, int idMensaje){
     this->setConv(idConv);
-    this->miConv->elimMensaje(idMensaje);
+    this->miConv->elimMensaje(idMensaje,this->sesion->getNum());
+};
+void ContMensaje::enviarMensaje(int idConv, DtMensaje *mensaje){
+    this->setConv(idConv);
+    this->miConv->envMensaje(this->getUser()->getNum(), mensaje);
+};
+
+int ContMensaje::crearConversacion(string contactoNum){
+    int idConv = this->sesion->getSizeConv() + 1;
+    this->sesion->crearConv(idConv, contactoNum);
+    return idConv;
+};
+
+map<string, Contacto*> ContMensaje::listarContactosSesion(){
+    return this->sesion->getContactos();
 };

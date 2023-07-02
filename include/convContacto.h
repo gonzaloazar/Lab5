@@ -6,13 +6,13 @@ using namespace std;
 
 class ConvContacto: public Conversacion {
     private:
-        int numero;
+        string numero;
         string nombre;
     public:
-    ConvContacto(int, bool, int numero, string nombre);
-    int getNumero();
+    ConvContacto(int, bool, string numero, string nombre);
+    string getNumero();
     string getNombre();
-    void setNumero(int);
+    void setNumero(string);
     void setNombre(string);
     ~ConvContacto();
     string getTipoConv();

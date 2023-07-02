@@ -8,7 +8,7 @@ string MenTexto::getTexo(){
     return this->texto;
 };
 
-MenTexto::MenTexto(int _cod,string miNum,string _texto) : Mensaje(_cod, miNum) {
+MenTexto::MenTexto(int _cod,Fecha f,string miNum, string _texto):Mensaje(_cod, f, miNum) {
     this->texto = _texto;
 };
 string MenTexto::getTipoMensaje(){
