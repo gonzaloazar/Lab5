@@ -11,13 +11,6 @@ void Mensaje::setVisto(string a){
     this->visto[a] = true;
 };
 
-void Mensaje::setTipoMensaje(string tipo){
-    this->tipoMensaje = tipo;
-};
-
-string Mensaje::getTipoMensaje(){
-    return this->tipoMensaje;
-};
 
 bool Mensaje::fueVisto(string a){
     if(this->visto[a] == true)

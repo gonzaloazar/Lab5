@@ -15,6 +15,7 @@ class MenFoto : public MenMultimedia {
         float getTamanio();
         string getTOpc();
         MenFoto(int codigo, string miNum, string url,string form, float tam, string tOpc);
+        string getTipoMensaje();
         ~MenFoto();
 };
 

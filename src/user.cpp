@@ -70,12 +70,12 @@ map<int, DtConversacion*> User::getConversacionesAct(){
             if(itr->second->getTipoConv() == "contacto"){
                 Conversacion *miConv = itr->second;
                 ConvContacto *conv = dynamic_cast<ConvContacto*>(miConv);
-                DtConvCont *nuevo = new DtConvCont(conv->getId(), conv->estaArchivado(),conv->getNombre(), conv->getNumero());
+                DtConvCont *nuevo = new DtConvCont(conv->getId(), conv->estaArchivado(),conv->getNombre());
                 convAct[conv->getId()] = nuevo;
             }else {
                 Conversacion *miConv = itr->second;
                 ConvGrupo *conv = dynamic_cast<ConvGrupo*>(miConv);
-                DtConvGrupo *nuevo = new DtConvGrupo(conv->getId(), conv->estaArchivado(),conv->getNombre(),conv->getURL(),conv->getFecha());
+                DtConvGrupo *nuevo = new DtConvGrupo(conv->getId(), conv->estaArchivado(),conv->getNombre(),conv->getURL());
                 convAct[conv->getId()] = nuevo;
             }
         }

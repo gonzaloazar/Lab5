@@ -16,10 +16,14 @@ string MenContacto::getNom(){
     return this->nom;
 };
 
+string MenContacto::getTipoMensaje(){
+    return "contacto";
+};
+
+
 MenContacto::MenContacto(int cod,string miNum,string nom,string num):Mensaje(cod,miNum){
     this->nom = nom;
     this->num = num;
-    this->setTipoMensaje("contacto");
 };
 
 

@@ -9,6 +9,7 @@ class MenVideo : public MenMultimedia {
         void setDuracion(float);
         float getDuracion();
         MenVideo(int codigo, string miNum,string url,float duracion);
+        string getTipoMensaje();
         ~MenVideo();
 };
 

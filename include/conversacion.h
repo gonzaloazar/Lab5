@@ -17,16 +17,14 @@ class Conversacion {
     private:
         int id;
         bool archivado;
-        string tipoConv;
         map<int, Mensaje*> mensajes;
     public:
     Conversacion(int unId, bool estArchivado);
     int getId();
-    string getTipoConv();
+    virtual string getTipoConv() = 0;
     bool estaArchivado();
     void setID(int);
-    void setArchivado(bool);
-    void setTipoConv(string);
+    void setArchivado(bool);;
     ~Conversacion();
     DtMensaje *getDtMensaje(int idMensaje);
     map<int, DtMensaje*> getDtMensajes();

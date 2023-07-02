@@ -12,6 +12,7 @@ class MenContacto : public Mensaje {
         string getNum();
         string getNom();
         MenContacto(int codigo, string miNum, string nom, string num);
+        string getTipoMensaje();
         ~MenContacto();
 };
 

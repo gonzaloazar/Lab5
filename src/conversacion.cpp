@@ -9,9 +9,6 @@ bool Conversacion::estaArchivado(){
     return this->archivado;
 };
 
-string Conversacion::getTipoConv(){
-    return this->tipoConv;
-};
 
 void Conversacion::setID(int _id){
     this->id = _id;
@@ -21,14 +18,12 @@ void Conversacion::setArchivado(bool arch){
    this->archivado = arch;
 };
 
-void Conversacion::setTipoConv(string a){
-    this->tipoConv = a;
-};
 
 Conversacion::Conversacion(int _id,bool _arch){
     setID(_id);
     setArchivado(_arch);
 };
+
 
 DtMensaje *Conversacion::getDtMensaje(int idMensaje){
     string tipoMensaje = this->mensajes[idMensaje]->getTipoMensaje();

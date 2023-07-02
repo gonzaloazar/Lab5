@@ -20,6 +20,7 @@ class ConvGrupo: public Conversacion {
         string getURL();
         Fecha getFecha();
         ~ConvGrupo();
+        string getTipoConv();
 };
 
 #endif

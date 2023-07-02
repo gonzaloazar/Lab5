@@ -12,6 +12,7 @@ class MenTexto : public Mensaje {
         string getTexo();
         MenTexto();
         MenTexto(int cod, string nom, string texto);
+        string getTipoMensaje();
         ~MenTexto();
 };
 

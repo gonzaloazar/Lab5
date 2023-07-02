@@ -15,5 +15,6 @@ class ConvContacto: public Conversacion {
     void setNumero(int);
     void setNombre(string);
     ~ConvContacto();
+    string getTipoConv();
 };
 #endif

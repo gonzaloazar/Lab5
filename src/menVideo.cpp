@@ -8,7 +8,10 @@ float MenVideo::getDuracion(){
     return this->duracion;
 };
 
+string MenVideo::getTipoMensaje(){
+    return "video";
+};
+
 MenVideo::MenVideo(int _codigo,string miNum,string _url,float _duracion):MenMultimedia(_codigo,miNum,_url){
     this->duracion=_duracion;
-    this->setTipoMensaje("video");
 };     

@@ -10,17 +10,15 @@ class Mensaje {
     private:
         int codigo;
         Fecha fecha;
-        string tipoMensaje;
         map <string, bool> visto;
     public:
         void setCod(int);
         void setFecha();
         void setVisto(string);
         bool fueVisto(string);
-        void setTipoMensaje(string);
         int getCod();
         string getFecha();
-        string getTipoMensaje();
+        virtual string getTipoMensaje() = 0;
         Mensaje();
         Mensaje(int cod,string miNum);
         ~Mensaje();

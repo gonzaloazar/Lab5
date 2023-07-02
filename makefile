@@ -17,7 +17,7 @@ CPPDIR	= src
 ODIR	= obj
 
 # compilar
-all: $(ODIR)/contmen.o $(ODIR)/dataBase.o $(ODIR)/inscripcion.o $(ODIR)/clase.o $(ODIR)/spinning.o $(ODIR)/entrenamiento.o $(ODIR)/dtsocio.o $(ODIR)/dtclase.o $(ODIR)/dtentrenamiento.o $(ODIR)/dtspinning.o $(MAIN).o
+all: $(ODIR)/menVideo.o $(ODIR)/menTexto.o $(ODIR)/dtMensaje.o $(ODIR)/dtMenMultimedia.o $(ODIR)/dtMenFoto.o $(ODIR)/dtMenVideo.o $(ODIR)/dtMenCont.o $(ODIR)/dtMenText.o $(ODIR)/dtConversacion.o $(ODIR)/dtConvGrupo.o $(ODIR)/dtConvCont.o $(ODIR)/conversacion.o $(ODIR)/convContacto.o $(ODIR)/convGrupo.o $(ODIR)/user.o $(ODIR)/sesion.o $(ODIR)/contmen.o $(ODIR)/dataBase.o $(MAIN).o
 	$(CC) $(CCFLAGS) -o $(MAIN) $^
 	@echo "Compilado: ok"
 
@@ -26,41 +26,79 @@ run: $(MAIN).o
 	./$(MAIN)
 
 # compilo el main
-$(ODIR)/$(MAIN).o: $(ODIR)/fecha.o $(ODIR)/socio.o $(ODIR)/inscripcion.o $(ODIR)/clase.o $(ODIR)/spinning.o $(ODIR)/entrenamiento.o $(ODIR)/dtsocio.o $(ODIR)/dtclase.o $(ODIR)/dtentrenamiento.o $(ODIR)/dtspinning.o $(MAIN).cpp
-	$(CC) $(CCFLAGS) -c $(MAIN).cpp $(ODIR)/fecha.o $(ODIR)/socio.o $(ODIR)/inscripcion.o $(ODIR)/clase.o $(ODIR)/spinning.o $(ODIR)/entrenamiento.o $(ODIR)/dtsocio.o $(ODIR)/dtclase.o $(ODIR)/dtentrenamiento.o $(ODIR)/dtspinning.o -o $@
+$(ODIR)/$(MAIN).o:  $(ODIR)/fecha.cpp $(ODIR)/mensaje.cpp $(ODIR)/menContacto.cpp $(ODIR)/menMultimedia.cpp $(ODIR)/menFoto.cpp $(ODIR)/menVideo.cpp $(ODIR)/menTexto.cpp $(ODIR)/dtMensaje.cpp $(ODIR)/dtMenMultimedia.cpp $(ODIR)/dtMenFoto.cpp $(ODIR)/dtMenVideo.cpp $(ODIR)/dtMenCont.cpp $(ODIR)/dtMenText.cpp $(ODIR)/dtConversacion.cpp $(ODIR)/dtConvGrupo.cpp $(ODIR)/dtConvCont.cpp $(ODIR)/conversacion.cpp $(ODIR)/convContacto.cpp $(ODIR)/convGrupo.cpp $(ODIR)/user.cpp $(ODIR)/sesion.cpp $(ODIR)/contmen.cpp $(ODIR)/dataBase.cpp $(MAIN).cpp
+	$(CC) $(CCFLAGS) -c $(MAIN).cpp $(ODIR)/fecha.o $(ODIR)/mensaje.o $(ODIR)/menContacto.o $(ODIR)/menMultimedia.o $(ODIR)/menFoto.o $(ODIR)/menVideo.o $(ODIR)/menTexto.o $(ODIR)/dtMensaje.o $(ODIR)/dtMenMultimedia.o $(ODIR)/dtMenFoto.o $(ODIR)/dtMenVideo.o $(ODIR)/dtMenCont.o $(ODIR)/dtMenText.o $(ODIR)/dtConversacion.o $(ODIR)/dtConvGrupo.o $(ODIR)/dtConvCont.o $(ODIR)/conversacion.o $(ODIR)/convContacto.o $(ODIR)/convGrupo.o $(ODIR)/user.o $(ODIR)/sesion.o $(ODIR)/contmen.o $(ODIR)/dataBase.o -o $@
 
 # compilo los modulos
 
 $(ODIR)/fecha.o: $(HDIR)/fecha.h $(CPPDIR)/fecha.cpp
 	$(CC) $(CCFLAGS) -c $(CPPDIR)/fecha.cpp -o $@
 
-$(ODIR)/socio.o: $(HDIR)/socio.h $(CPPDIR)/socio.cpp
+$(ODIR)/mensaje.o: $(HDIR)/mensaje.h $(CPPDIR)/mensaje.cpp
 	$(CC) $(CCFLAGS) -c $(CPPDIR)/socio.cpp -o $@
 
-$(ODIR)/inscripcion.o: $(HDIR)/inscripcion.h $(CPPDIR)/inscripcion.cpp
-	$(CC) $(CCFLAGS) -c $(CPPDIR)/inscripcion.cpp -o $@
+$(ODIR)/menContacto.o: $(HDIR)/menContacto.h $(CPPDIR)/menContacto.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/menContacto.cpp -o $@
 
-$(ODIR)/clase.o: $(HDIR)/clase.h $(CPPDIR)/clase.cpp
-	$(CC) $(CCFLAGS) -c $(CPPDIR)/clase.cpp -o $@
+$(ODIR)/menMultimedia.o: $(HDIR)/menMultimedia.h $(CPPDIR)/menMultimedia.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/menMultimedia.cpp -o $@
 
-$(ODIR)/spinning.o: $(HDIR)/spinning.h $(CPPDIR)/spinning.cpp
-	$(CC) $(CCFLAGS) -c $(CPPDIR)/spinning.cpp -o $@
+$(ODIR)/menFoto.o: $(HDIR)/menFoto.h $(CPPDIR)/menFoto.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/menFoto.cpp -o $@
 
-$(ODIR)/entrenamiento.o: $(HDIR)/entrenamiento.h $(CPPDIR)/entrenamiento.cpp
-	$(CC) $(CCFLAGS) -c $(CPPDIR)/entrenamiento.cpp -o $@
+$(ODIR)/menVideo.o: $(HDIR)/menVideo.h $(CPPDIR)/menVideo.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/menVideo.cpp -o $@
 
-$(ODIR)/dtsocio.o: $(HDIR)/dtsocio.h $(CPPDIR)/dtsocio.cpp
-	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtsocio.cpp -o $@
+$(ODIR)/menTexto.o: $(HDIR)/menTexto.h $(CPPDIR)/menTexto.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/menTexto.cpp -o $@
 
-$(ODIR)/dtclase.o: $(HDIR)/dtclase.h $(CPPDIR)/dtclase.cpp
-	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtclase.cpp -o $@
+$(ODIR)/dtMensaje.o: $(HDIR)/dtMensaje.h $(CPPDIR)/dtMensaje.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtMensaje.cpp -o $@
 
-$(ODIR)/dtentrenamiento.o: $(HDIR)/dtentrenamiento.h $(CPPDIR)/dtentrenamiento.cpp
-	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtentrenamiento.cpp -o $@
+$(ODIR)/dtMenMultimedia.o: $(HDIR)/dtMenMultimedia.h $(CPPDIR)/dtMenMultimedia.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtMenMultimedia.cpp -o $@
 
-$(ODIR)/dtspinning.o: $(HDIR)/dtspinning.h $(CPPDIR)/dtspinning.cpp
-	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtspinning.cpp -o $@
+$(ODIR)/dtMenFoto.o: $(HDIR)/dtMenFoto.h $(CPPDIR)/dtMenFoto.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtMenFoto.cpp -o $@
 
+$(ODIR)/dtMenVideo.o: $(HDIR)/dtMenVideo.h $(CPPDIR)/dtMenVideo.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtMenVideo.cpp -o $@
+
+$(ODIR)/dtMenCont.o: $(HDIR)/dtMenCont.h $(CPPDIR)/dtMenCont.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtMenCont.cpp -o $@
+
+$(ODIR)/dtMenText.o: $(HDIR)/dtMenText.h $(CPPDIR)/dtMenText.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtMenText.cpp -o $@
+
+$(ODIR)/dtConversacion.o: $(HDIR)/dtConversacion.h $(CPPDIR)/dtConversacion.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtConversacion.cpp -o $@
+
+$(ODIR)/dtConvGrupo.o: $(HDIR)/dtConvGrupo.h $(CPPDIR)/dtConvGrupo.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtConvGrupo.cpp -o $@
+
+$(ODIR)/dtConvCont.o: $(HDIR)/dtConvCont.h $(CPPDIR)/dtConvCont.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/dtConvCont.cpp -o $@
+
+$(ODIR)/conversacion.o: $(HDIR)/conversacion.h $(CPPDIR)/conversacion.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/conversacion.cpp -o $@
+
+$(ODIR)/convContacto.o: $(HDIR)/convContacto.h $(CPPDIR)/convContacto.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/convContacto.cpp -o $@
+
+$(ODIR)/convGrupo.o: $(HDIR)/convGrupo.h $(CPPDIR)/convGrupo.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/convGrupo.cpp -o $@
+
+$(ODIR)/user.o: $(HDIR)/user.h $(CPPDIR)/user.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/user.cpp -o $@
+
+$(ODIR)/sesion.o: $(HDIR)/sesion.h $(CPPDIR)/sesion.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/sesion.cpp -o $@
+
+$(ODIR)/contmen.o: $(HDIR)/contmen.h $(CPPDIR)/contmen.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/contmen.cpp -o $@
+
+$(ODIR)/dataBase.o: $(HDIR)/factory.h $(CPPDIR)/dataBase.cpp
+	$(CC) $(CCFLAGS) -c $(CPPDIR)/dataBase.cpp -o $@							
 # elimino lo generado
 clean:
 	rm -f principal $(ODIR)/*.o *.o
