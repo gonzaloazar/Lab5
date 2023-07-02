@@ -26,4 +26,7 @@ MenContacto::MenContacto(int cod,string miNum,string nom,string num):Mensaje(cod
     this->num = num;
 };
 
+MenContacto::~MenContacto(){
+};
+
 

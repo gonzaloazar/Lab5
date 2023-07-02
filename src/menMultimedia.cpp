@@ -14,3 +14,5 @@ MenMultimedia::MenMultimedia(int cod, string miNum, string newURL) : Mensaje(cod
     this->url = newURL;
 };
 
+MenMultimedia::~MenMultimedia(){
+};

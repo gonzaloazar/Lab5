@@ -22,3 +22,10 @@ DtMenCont::DtMenCont(int a, string s, string d):DtMensaje(a){
     this->num = s;
     this->nom = d;
 };
+
+DtMenCont::~DtMenCont(){
+};
+
+string DtMenCont::getTipoMensaje(){
+    return "contacto";
+}

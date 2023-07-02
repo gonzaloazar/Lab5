@@ -44,6 +44,9 @@ string Fecha::getFechaString(){
     return fecha;
 };
 
+Fecha::~Fecha(){
+};
+
  /*   
 struct tm {
     int tm_sec;   // seconds of minutes from 0 to 61

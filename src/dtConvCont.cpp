@@ -11,7 +11,7 @@ void DtConvCont::setNum(int a){
     this->num=a;
 };
 
-string  DtConvCont::getNom(){
+string DtConvCont::getNom(){
     return this->nom;
 };
 
@@ -28,7 +28,13 @@ string DtConvCont::getTipoConv(){
     return "contacto";
 };
 
+DtConvCont::~DtConvCont(){
+};
+
 std::ostream& operator<<(std::ostream& os, DtConvCont &obj) {
     os << "Nombre: " << obj.getNom() << ' ' << obj.getNum() << endl;
   return os;
+};
+
+DtConvCont::DtConvCont(){
 };

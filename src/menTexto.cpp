@@ -14,3 +14,9 @@ MenTexto::MenTexto(int _cod,string miNum,string _texto) : Mensaje(_cod, miNum) {
 string MenTexto::getTipoMensaje(){
     return "Texto";
 };
+
+MenTexto::~MenTexto(){
+};
+
+MenTexto::MenTexto(){
+};

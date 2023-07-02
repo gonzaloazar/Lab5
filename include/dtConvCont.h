@@ -12,7 +12,7 @@ class DtConvCont : public DtConversacion {
         void setNum(int);
         int getNum();
         string getNom();
-        string getUrl();
+        //string getUrl();
         DtConvCont();
         DtConvCont(int,bool,string,int);
         ~DtConvCont();

@@ -34,4 +34,8 @@ Mensaje::Mensaje(int _cod, string miNom){
     this->setVisto(miNom);
 };
 
+Mensaje::~Mensaje(){
+};
 
+Mensaje::Mensaje(){
+};

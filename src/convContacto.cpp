@@ -26,4 +26,8 @@ ConvContacto::ConvContacto(int id,bool estaarchivado,int _numero,string _nombre)
     setNumero(_numero);
 };
 
+ConvContacto::~ConvContacto(){
+};
+
+
 

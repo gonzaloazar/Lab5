@@ -29,3 +29,9 @@ DtConvGrupo::DtConvGrupo(int a, bool s, string d,string url, Fecha creacion):DtC
     setUrl(url);
     setFecha(creacion);
 };
+
+DtConvGrupo::~DtConvGrupo(){
+};
+
+DtConvGrupo::DtConvGrupo(){
+};

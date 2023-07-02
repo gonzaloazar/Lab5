@@ -31,3 +31,6 @@ MenFoto::MenFoto(int cod, string miNum, string url, string newForm, float newTam
     this->tamanio = newTam;
     this->textOpcional = newTOpc;
 };
+
+MenFoto::~MenFoto(){
+};

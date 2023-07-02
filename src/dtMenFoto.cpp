@@ -36,3 +36,6 @@ DtMenFoto::DtMenFoto(int a, string d, string s, float f, string g):DtMenMultimed
     this->tamanio = f;
     this->textOpc = g;
 };
+
+DtMenFoto::~DtMenFoto(){
+};

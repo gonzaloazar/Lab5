@@ -75,3 +75,6 @@ map<int, DtMensaje*> Conversacion::getDtMensajes(){
     }
     return misMensajes;
 };
+
+Conversacion::~Conversacion(){
+};

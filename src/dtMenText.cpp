@@ -17,3 +17,11 @@ string DtMenText::getTipoMensaje(){
 DtMenText::DtMenText(int a,string d):DtMensaje(a){
     this->text = d;
 };
+
+DtMenText::~DtMenText(){
+};
+
+/*std::ostream& operator<<(std::ostream& os, DtMenText& obj) {
+    os <<  obj.getText() << endl;
+  return os;
+};*/

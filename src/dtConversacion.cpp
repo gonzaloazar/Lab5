@@ -24,3 +24,9 @@ DtConversacion::DtConversacion(int a, bool s){
     this->id = a;
     this->estaArch = s;
 };
+
+DtConversacion::~DtConversacion(){
+};
+
+DtConversacion::DtConversacion(){
+};

@@ -17,3 +17,6 @@ string DtMenVideo::getTipoMensaje(){
 DtMenVideo::DtMenVideo(int a,string s,float d):DtMenMultimedia(a,s){
     this->duracion = d;
 };
+
+DtMenVideo::~DtMenVideo(){
+};

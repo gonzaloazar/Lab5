@@ -13,4 +13,10 @@ int DtMensaje::getId(){
 
 void DtMensaje::setId(int x){
     this->id = x;
-}
+};
+
+DtMensaje::~DtMensaje(){
+};
+
+DtMensaje::DtMensaje(){
+};
