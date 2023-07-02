@@ -30,7 +30,10 @@ User* Sesion::getSesionActiva(){
 
 bool Sesion::ingresarNumero(string num){
     if(existeSesion(num)){
-        this->sesionActiva = this->sesiones[num];
+        if(this->sesionActiva != this->sesiones[num]){
+            this->cerrarSesion();
+            this->sesionActiva = this->sesiones[num];
+        }
         return true;
     }else {
         return false;
@@ -45,6 +48,7 @@ void Sesion::guardarFechaSesion(){
     this->sesionActiva->actUltConex();
 };
 void Sesion::cerrarSesion(){
+    this->guardarFechaSesion();
     this->sesionActiva = NULL;
 };
 

@@ -2,7 +2,6 @@
 #include "../include/factory.h"
 #include "../include/contmen.h"
 
-
 ContMensaje *conMen ;
 Sesion *login = new Sesion;
 

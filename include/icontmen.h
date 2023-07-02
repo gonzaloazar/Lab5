@@ -27,6 +27,9 @@ class IContMensajes {
         virtual map<int, DtConversacion*> listarConversacionesAct() = 0;
         virtual map<int, DtMensaje*> listarMensajes(int idConversacion) = 0;
         virtual void selectConv(int idConv) = 0;
+        virtual void archivarConv(int idConv) = 0;
+    //eliminarMensaje
+        virtual void eliminarMensaje(int idConv, int idMensaje) = 0;
 };
 
 

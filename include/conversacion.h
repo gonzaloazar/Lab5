@@ -26,7 +26,9 @@ class Conversacion {
     void setID(int);
     void setArchivado(bool);;
     ~Conversacion();
-    DtMensaje *getDtMensaje(int idMensaje);
-    map<int, DtMensaje*> getDtMensajes();
+    DtMensaje *getDtMensaje(int idMensaje, string num);
+    map<int, DtMensaje*> getDtMensajes(string num);
+
+    void elimMensaje(int idMensaje);
 };
 #endif

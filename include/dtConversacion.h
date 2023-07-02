@@ -1,6 +1,6 @@
 #ifndef DTCONVERSACION_H
 #define DTCONVERSACION_H
-#include <string>
+#include <iostream>
 using namespace std;
 
 

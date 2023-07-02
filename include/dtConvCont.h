@@ -1,8 +1,7 @@
 #ifndef DTCONVCONT_H
 #define DTCONVCONT_H
 #include "dtConversacion.h"
-#include <string>
-using namespace std;
+
 
 class DtConvCont : public DtConversacion {
     public:

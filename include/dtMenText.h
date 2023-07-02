@@ -2,7 +2,6 @@
 #define DTMENTEXT_H
 #include "dtMensaje.h"
 
-using namespace std;
 
 
 class DtMenText : public DtMensaje {
@@ -11,11 +10,12 @@ class DtMenText : public DtMensaje {
     public: 
         void setText(string);
         string getText();
-        DtMenText(int,string);
+        DtMenText(int,Fecha,string,string);
         string getTipoMensaje();
         ~DtMenText();
+        
 };
 
-//std::ostream& operator<<(std::ostream& os, DtMenText& obj);
+std::ostream& operator<<(std::ostream& os, DtMenText& obj);
 
 #endif

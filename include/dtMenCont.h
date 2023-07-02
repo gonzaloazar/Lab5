@@ -2,8 +2,6 @@
 #define DTMENCONT_H
 #include "dtMensaje.h"
 
-using namespace std;
-
 class DtMenCont : public DtMensaje {
     private: 
         string num;
@@ -14,7 +12,7 @@ class DtMenCont : public DtMensaje {
         string getNum();
         string getNom();
         string getTipoMensaje();
-        DtMenCont(int,string,string);
+        DtMenCont(int,Fecha,string,string,string);
         ~DtMenCont();
 };
 std::ostream& operator<<(std::ostream& os, DtMenCont& obj);

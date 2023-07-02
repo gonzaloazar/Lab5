@@ -2,8 +2,7 @@
 #define DTCONVGRUPO_H
 #include "dtConversacion.h"
 #include "fecha.h"
-#include <string>
-using namespace std;
+
 
 
 class DtConvGrupo : public DtConversacion {

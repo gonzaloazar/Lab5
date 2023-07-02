@@ -31,11 +31,18 @@ string DtMenFoto::getTipoMensaje(){
     return "foto";
 };
 
-DtMenFoto::DtMenFoto(int a, string d, string s, float f, string g):DtMenMultimedia(a,d){
+DtMenFoto::DtMenFoto(int a,Fecha fecha,string s1, string d, string s, float f, string g):DtMenMultimedia(a,fecha,s1,d){
     this->formato = s;
     this->tamanio = f;
     this->textOpc = g;
 };
 
 DtMenFoto::~DtMenFoto(){
+};
+
+std::ostream& operator<<(std::ostream& os, DtMenFoto& obj){
+    os << obj.getFormato() << " " << obj.getId() << " " 
+    << obj.getTamanio() << " " << obj.getTextOpc() << " " 
+    << obj.getURL() << endl;
+    return os;
 };

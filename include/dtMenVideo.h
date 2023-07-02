@@ -2,7 +2,6 @@
 #define DTMENVIDEO_H
 #include "dtMenMultimedia.h"
 
-using namespace std;
 
 
 class DtMenVideo : public DtMenMultimedia {
@@ -12,11 +11,11 @@ class DtMenVideo : public DtMenMultimedia {
         void setDuracion(float);
         float getDuracion();
         string getTipoMensaje();
-        DtMenVideo(int,string,float);
+        DtMenVideo(int,Fecha,string,string,float);
         ~DtMenVideo();
 };
 
-//std::ostream& operator<<(std::ostream& os, DtMenVideo& obj);
+std::ostream& operator<<(std::ostream& os, DtMenVideo& obj);
 
 
 #endif

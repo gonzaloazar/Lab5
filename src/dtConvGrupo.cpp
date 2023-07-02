@@ -35,3 +35,8 @@ DtConvGrupo::~DtConvGrupo(){
 
 DtConvGrupo::DtConvGrupo(){
 };
+
+std::ostream& operator<<(std::ostream& os, DtConvGrupo& obj){
+    os <<  obj.getFecha().getFechaString() << " " << obj.getId() << " " << obj.getNom() << " " << obj.getUrl() << endl;
+    return os;
+};

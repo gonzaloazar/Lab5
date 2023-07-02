@@ -14,9 +14,13 @@ string DtMenVideo::getTipoMensaje(){
     return "video";
 };
 
-DtMenVideo::DtMenVideo(int a,string s,float d):DtMenMultimedia(a,s){
+DtMenVideo::DtMenVideo(int a,Fecha f,string s1,string s,float d):DtMenMultimedia(a,f,s1,s){
     this->duracion = d;
 };
 
 DtMenVideo::~DtMenVideo(){
+};
+std::ostream& operator<<(std::ostream& os, DtMenVideo& obj){
+    os << obj.getFecha().getFechaToString() << " " << obj.getId() << " " << obj.getDuracion() << " " << obj.getURL() << endl;
+    return os;
 };

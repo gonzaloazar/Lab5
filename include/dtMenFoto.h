@@ -1,7 +1,7 @@
 #ifndef DTMENFOTO_H
 #define DTMENFOTO_H
 #include "dtMenMultimedia.h"
-using namespace std;
+
 
 class DtMenFoto : public DtMenMultimedia {
     private:
@@ -15,7 +15,7 @@ class DtMenFoto : public DtMenMultimedia {
         string getFormato();
         float getTamanio();
         string getTextOpc();
-        DtMenFoto(int,string,string,float,string);
+        DtMenFoto(int,Fecha,string,string,string,float,string);
         string getTipoMensaje();
         ~DtMenFoto();
 };

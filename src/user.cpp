@@ -126,12 +126,15 @@ int User::cantConvArch(){
 
 void User::actualizarDescripcion(string newDesc){
     this->setDesc(newDesc);
+    cout << endl << "Descripcion actualizada." << endl;
 };
 
 void User::actualizarNombre(string newNombre){
     this->setNom(newNombre);
+    cout << endl << "Nombre actualizado." << endl;
 };
 
 void User::actualizarURL(string newURL){
     this->setURL(newURL);
+    cout << endl <<"URL actualizada." << endl;
 };

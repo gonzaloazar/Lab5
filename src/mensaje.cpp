@@ -28,8 +28,16 @@ string Mensaje::getFecha(){
     return this->fecha.getFechaString();
 };
 
+bool Mensaje::esEmisor(string miNum){
+    if(this->emisor == miNum)
+        return true;
+    else 
+        return false;
+}
+
 Mensaje::Mensaje(int _cod, string miNom){
     this->codigo =_cod;
+    this->emisor = miNom;
     this->setFecha();
     this->setVisto(miNom);
 };

@@ -14,14 +14,14 @@ string DtMenText::getTipoMensaje(){
     return "texto";
 };
 
-DtMenText::DtMenText(int a,string d):DtMensaje(a){
+DtMenText::DtMenText(int a,Fecha f,string s,string d):DtMensaje(a,f,s){
     this->text = d;
 };
 
 DtMenText::~DtMenText(){
 };
 
-/*std::ostream& operator<<(std::ostream& os, DtMenText& obj) {
-    os <<  obj.getText() << endl;
+std::ostream& operator<<(std::ostream& os, DtMenText& obj) {
+    os << obj.getFecha().getFechaToString() << " "<< obj.getId() << " " << obj.getText() <<endl;
   return os;
-};*/
+};

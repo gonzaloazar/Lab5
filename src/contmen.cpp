@@ -32,12 +32,12 @@ Conversacion *ContMensaje::getConver(){
 };
 
 DtMensaje *ContMensaje::getDtMensaje(int idMensaje){
-    return this->miConv->getDtMensaje(idMensaje);
+    return this->miConv->getDtMensaje(idMensaje,this->sesion->getNum());
 };
 
 DtMensaje *ContMensaje::selectMensaje(int idConv,int idMensaje){
     this->setConv(idConv);
-    return this->miConv->getDtMensaje(idMensaje);
+    return this->miConv->getDtMensaje(idMensaje, this->sesion->getNum());
 };
 
 map<int, DtConversacion*> ContMensaje::listarConversacionesAct(){
@@ -58,10 +58,20 @@ map<int, DtConversacion*> ContMensaje::listarConversacionesArch(){
 
 map<int, DtMensaje*> ContMensaje::listarMensajes(int idConversacion){
     this->setConv(idConversacion);
-    return this->miConv->getDtMensajes();
+    return this->miConv->getDtMensajes(this->sesion->getNum());
 };
 
 void ContMensaje::selectConv(int idConv){
     this->setConv(idConv);
     this->miConv->setArchivado(false);
+};
+
+void ContMensaje::archivarConv(int idConv){
+    this->setConv(idConv);
+    this->miConv->setArchivado(true);
+};
+
+void ContMensaje::eliminarMensaje(int idConv, int idMensaje){
+    this->setConv(idConv);
+    this->miConv->elimMensaje(idMensaje);
 };

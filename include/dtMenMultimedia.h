@@ -2,7 +2,6 @@
 #define DTMENMULTIMEDIA_H
 #include "dtMensaje.h"
 
-using namespace std;
 
 
 class DtMenMultimedia : public DtMensaje {
@@ -11,10 +10,9 @@ class DtMenMultimedia : public DtMensaje {
     public:
         void setURL(string);
         string getURL();
-        DtMenMultimedia(int,string);
+        DtMenMultimedia(int,Fecha,string,string);
         ~DtMenMultimedia();
 };
-std::ostream& operator<<(std::ostream& os, DtMenMultimedia& obj);
 
 
 #endif

@@ -25,7 +25,8 @@ Conversacion::Conversacion(int _id,bool _arch){
 };
 
 
-DtMensaje *Conversacion::getDtMensaje(int idMensaje){
+DtMensaje *Conversacion::getDtMensaje(int idMensaje, string num){
+    this->mensajes[idMensaje]->setVisto(num);
     string tipoMensaje = this->mensajes[idMensaje]->getTipoMensaje();
     if(tipoMensaje == "foto"){
         Mensaje *miMen = this->mensajes[idMensaje];
@@ -51,10 +52,11 @@ DtMensaje *Conversacion::getDtMensaje(int idMensaje){
     }
 };
 
-map<int, DtMensaje*> Conversacion::getDtMensajes(){
+map<int, DtMensaje*> Conversacion::getDtMensajes(string num){
     map<int, DtMensaje*> misMensajes;
     for (auto itr = this->mensajes.begin(); itr != this->mensajes.end(); itr++){
         Mensaje *miMen = itr->second;
+        miMen->setVisto(num);
         if (miMen->getTipoMensaje() == "foto"){
             MenFoto *men = dynamic_cast<MenFoto*>(miMen);
             DtMenFoto *nuevo = new DtMenFoto(men->getCod(),men->getURL(),men->getFormato(),men->getTamanio(),men->getTOpc());
@@ -74,6 +76,11 @@ map<int, DtMensaje*> Conversacion::getDtMensajes(){
         }
     }
     return misMensajes;
+};
+
+void Conversacion::elimMensaje(int idMensaje){
+    delete this->mensajes[idMensaje];
+    cout << "Mensaje eliminado." << endl;
 };
 
 Conversacion::~Conversacion(){
