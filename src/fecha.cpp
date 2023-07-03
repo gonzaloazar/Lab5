@@ -2,9 +2,6 @@
 #include <ctime>
 using namespace std;
 
-
-
-
 int Fecha::getAnio(){
     return this->anio;
 };

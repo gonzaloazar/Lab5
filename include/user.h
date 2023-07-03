@@ -51,6 +51,7 @@ class User : public ModUser {
 
         void crearConv(int id, string num);
         map<string, Contacto*> getContactos();
+        void agregarContacto(User*);
 };
 
 #endif

@@ -5,6 +5,7 @@
 ContMensaje *conMen ;
 Sesion *login = new Sesion;
 
+
 Factory::Factory(){};
 
 ISesion *Factory::getISesion(){

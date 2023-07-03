@@ -157,3 +157,7 @@ map<string, Contacto*> User::getContactos(){
     }
     return misCont;
 };
+
+void User::agregarContacto(User* u){
+    this->contactos[u->getNum()] = u;
+};

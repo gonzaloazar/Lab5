@@ -83,8 +83,7 @@ map<int, DtMensaje*> Conversacion::getDtMensajes(string num){
 
 void Conversacion::elimMensaje(int idMensaje, string miNum){
     if(this->mensajes[idMensaje]->esEmisor(miNum)){
-        Mensaje *borrar=this->mensajes[idMensaje];
-        borrar->~Mensaje();
+        this->mensajes[idMensaje]->~Mensaje();
     }
     else 
         this->mensajes[idMensaje]->setNoVisto(miNum);
@@ -96,19 +95,19 @@ void Conversacion::envMensaje(string num,DtMensaje* mensaje){
     int posicion = ultposicion ++;
     if(mensaje->getTipoMensaje()=="contacto"){
         DtMenCont *men = dynamic_cast<DtMenCont*>(mensaje);
-        MenContacto *menCont = new MenContacto(men->getId(),men->getFecha(),num, men->getNom(), men->getNum());
+        MenContacto *menCont = new MenContacto(posicion,men->getFecha(),num, men->getNom(), men->getNum());
         this->mensajes[posicion] = menCont;
     }else if(mensaje->getTipoMensaje()=="texto"){
         DtMenText *men = dynamic_cast<DtMenText*>(mensaje);
-        MenTexto *menText = new MenTexto(men->getId(),men->getFecha(), num, men->getText());
+        MenTexto *menText = new MenTexto(posicion,men->getFecha(), num, men->getText());
         this->mensajes[posicion] = menText;        
     }else if(mensaje->getTipoMensaje()=="video"){
         DtMenVideo *men = dynamic_cast<DtMenVideo*>(mensaje);
-        MenVideo *menVideo = new MenVideo(men->getId(),men->getFecha(),num,men->getURL(),men->getDuracion());
+        MenVideo *menVideo = new MenVideo(posicion,men->getFecha(),num,men->getURL(),men->getDuracion());
         this->mensajes[posicion] = menVideo;
     }else if(mensaje->getTipoMensaje()=="foto"){
         DtMenFoto *men = dynamic_cast<DtMenFoto*>(mensaje);
-        MenFoto *menFoto = new MenFoto(men->getId(),men->getFecha(), num, men->getURL(), men->getFormato(), men->getTamanio(), men->getTextOpc());
+        MenFoto *menFoto = new MenFoto(posicion,men->getFecha(), num, men->getURL(), men->getFormato(), men->getTamanio(), men->getTextOpc());
         this->mensajes[posicion] = menFoto;
     }
     
